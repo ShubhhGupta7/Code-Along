@@ -6,6 +6,12 @@ const expressLayouts = require('express-ejs-layouts');
 // Using layouts with partials
 app.use(expressLayouts);
 
+// using Static files.
+app.use(express.static('./asserts'));
+// Extract styles and scripts from the sub pages to the layout.
+app.set('layout extractStyles', true);
+app.set('layout extractScripts', true);
+
 // use express router.
 app.use('/', require('./routes'));
 
