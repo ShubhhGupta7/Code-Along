@@ -10,12 +10,20 @@ const session = require('express-session');
 const passport = require('passport');
 const passportLocal = require('./config/passport-local-strategy');
 const MongoStore = require('connect-mongo');
+const sassMiddleware = require('node-sass-middleware');
+
+app.use(sassMiddleware( {
+    src: './asserts/scss',
+    dest: './asserts/css',
+    debug: true,
+    outputStyle: 'expanded',
+    prefix: '/css'
+}));
 
 // Middleware to decrypt the form encripted data
 app.use(express.urlencoded());
 // Middleware to create and alter keys
 app.use(cookieParser());
-
 
 // using Static files.
 app.use(express.static('./asserts'));
