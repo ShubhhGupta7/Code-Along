@@ -1,19 +1,36 @@
 <header>
-    Codeial / Header
+    <!-- Codeial / Header -->
+    <div class="application-heading-container ">
+        <h2>Codeial</h2>
+    </div>
+    <div class="horizontal-list nav-container">
+        <nav>
+            <ul>
+                <% if(locals.user) { %>
+                        <li>
+                            <a href="/users/Profile">
+                                <%= user.name %>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/users/sign-out">
+                                Sign Out
+                            </a>
+                        </li>
+                <% } else { %> 
+                        <li>
+                            <a href="/users/sign-in">
+                                Sign In
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/users/sign-up">
+                                Sign Up
+                            </a>
+                        </li>
+                <% } %>
+            </ul>
+        </nav>
+    </div>
 </header>
 
-<ul>
-    <% if(locals.user) { %>
-        <li> <%=user.name%></li>
-        <li>
-            <a href="/users/sign-out">Sign-out</a>
-        </li>
-    <%} else { %>
-        <li>
-            <a href="/users/sign-in">Sign-in</a>
-        </li>
-        <li>
-            <a href="/users/sign-up">Sign-up</a>
-        </li>
-    <%}%>
-</ul>
