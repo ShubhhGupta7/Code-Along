@@ -37,7 +37,7 @@ body main #feed-post #form-container {
   height: 15vh;
 }
 
-body main #feed-post #form-container #post-form {
+body main #feed-post #form-container #post-form, body main #feed-post #form-container #comment-form {
   margin: 0;
   width: 100%;
   height: 100%;
@@ -67,6 +67,12 @@ body main #feed-post #form-container #text-area:focus {
   outline: none;
 }
 
+body main #feed-post #comments-display-container {
+  width: 100%;
+  height: 18vh;
+  overflow-y: scroll;
+}
+
 body main #feed-post ul {
   list-style: none;
   padding: 0;
@@ -79,6 +85,7 @@ body main #feed-post ul li {
 body main #feed-post ul li h4 {
   margin: .5rem 0.2rem;
   color: #673ab7;
+  font-size: 0.8rem;
 }
 
 body main #feed-post ul li p {

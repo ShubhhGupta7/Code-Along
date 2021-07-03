@@ -18,10 +18,34 @@ module.exports.home  = function(req, res) {
     // });
 
     // Populate the user of each post
-    Post.find({}).populate('user').exec(function(err, posts) {
+//     Post.find({}).populate('user').exec(function(err, posts) {
+//         if(err) {
+//             console.log('Error in fetching data from the user.');
+//         }
+
+//         return res.render('home', {
+//             'title' : 'Codeial | Home',
+//             'post_list' : posts
+//         });        
+//     })
+// };
+
+    // Populating user and comments with comments user for displaying a full post.
+    Post.find({})
+    .populate('user')
+    .populate({
+        path: 'comments',
+        populate: {
+            path: 'user'
+        }
+    })
+    
+    
+    .exec(function(err, posts) {
         if(err) {
             console.log('Error in fetching data from the user.');
         }
+
 
         return res.render('home', {
             'title' : 'Codeial | Home',
@@ -29,5 +53,7 @@ module.exports.home  = function(req, res) {
         });        
     })
 };
+
+
 
 //  module.exports.action_name = function(req, res) 
