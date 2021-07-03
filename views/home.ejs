@@ -1,20 +1,40 @@
-<link rel="stylesheet" href="/css/home_layout.css">
 <link rel="stylesheet" href="/css/header.css">
 <link rel="stylesheet" href="/css/footer.css">
-<h1>Codeial / <%= title %> </h1>
+<link rel="stylesheet" href="/css/home_layout.css">
 
-<section id=feed-post>
-    <div id="heading-container">
-        <h4>Posts</h4>
-    </div>
+<main>
 
-    <div id="form-container">
-        <form action="/users/posts/create-post" method="POST">
-            <textarea name="post-input" id="" cols="30" rows="3" placeholder="Type Here..."></textarea>
+    <section id="navigation-search-container">
 
-            <button type="submit">Post</button>
-        </form>
-    </div>
-</section>
+    </section>
 
+    <section id="feed-post">
 
+        <div id="form-container" class="sub-container">
+            <form action="/posts/create" method="POST" id="post-form">
+                <div>
+                    <textarea name="content" id="text-area" cols="20" rows="1" placeholder="What's in your mind?"></textarea>
+                </div>
+                <div>
+                    <button type="submit">Post</button>
+                </div>
+            </form>
+        </div>
+    
+        <div id ="post-display-container">
+            <ul>
+                <% for(post of post_list) {%>
+                    <li id=post class="sub-container">    
+                            <h4> <%= post.user.name %></h3>
+                            <p> <%= post.content %> </p>
+                    </li>
+                <% } %>          
+            </ul>
+        </div>    
+    </section>    
+
+    <section id="friend-chat-container">
+
+    </section>
+</main>
+                    

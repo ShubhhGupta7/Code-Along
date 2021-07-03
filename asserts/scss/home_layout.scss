@@ -1,3 +1,91 @@
 body {
     background-color: whitesmoke;
+    color: black;
+    font-family: auto;
+    main {
+        text-align: center;
+    
+        section {
+            box-sizing: border-box;
+            width: 26vw;
+            display: inline-block;
+            height: 85vh;
+            margin: 1vh 1vw;
+            padding: 0.5rem;
+
+            .sub-container {
+                background-color: #ccc9c952;
+                border-left: 1px solid lightgrey;
+                box-shadow: 1px 1px 0px 1px #cac0c0;
+                box-sizing: border-box;
+                border-radius: 0.8rem;
+                padding: 0.5rem;
+                margin: 0.5rem 0rem;
+                width: 100%;
+            }
+        }
+        
+        #navigation-search-container {
+            
+        }
+    
+        #feed-post {
+            width: 39vw;
+            overflow-y: scroll;            
+            #form-container {
+                height:15vh;
+                #post-form {
+                    margin: 0;
+                    width: 100%;
+                    height: 100%;
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-around;
+                    align-items: center;
+                }
+
+                button {
+                    background-color: coral;
+                    color: white;
+                    // font-weight: bold;
+                    font-size: 0.7rem;
+                    border: none;
+                    padding: .5rem 1rem;
+                    border-radius: 0.8rem;
+                }
+
+                #text-area {
+                    border-radius: 0.8rem;
+                    padding: .5rem;
+                    border: none;
+                    font-size: 0.7rem;
+                    &:focus {
+                        outline: none;
+                    }
+                }
+            }
+              
+            ul {
+                list-style: none;
+                padding: 0;
+                li {
+                    text-align: left;
+                    h4 {
+                        margin: .5rem 0.2rem;
+                        color: #673ab7;
+                    }
+
+                    p {
+                        margin: 0.2rem;
+                        font-size: 0.8rem;
+                    }
+                }
+            }
+        }
+    
+        #friend-chat-container {
+        
+        }
+    }
+    
 }
