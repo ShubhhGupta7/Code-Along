@@ -9,17 +9,18 @@
     </section>
 
     <section id="feed-post">
-
-        <div id="form-container" class="sub-container">
-            <form action="/posts/create" method="POST" id="post-form">
-                <div>
-                    <textarea name="content" id="text-area" cols="20" rows="1" placeholder="What's in your mind?"></textarea>
-                </div>
-                <div>
-                    <button type="submit">Post</button>
-                </div>
-            </form>
-        </div>
+        <%if(locals.user) { %>
+            <div id="form-container" class="sub-container">
+                <form action="/posts/create" method="POST" id="post-form">
+                    <div>
+                        <textarea name="content" id="text-area" cols="20" rows="1" placeholder="What's in your mind?"></textarea>
+                    </div>
+                    <div>
+                        <button type="submit">Post</button>
+                    </div>
+                </form>
+            </div>
+        <% } %>
     
         <div id ="post-display-container">
             <ul>
