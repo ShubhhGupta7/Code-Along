@@ -9,12 +9,21 @@ const { urlencoded } = require('express');
 const session = require('express-session');
 const passport = require('passport');
 const passportLocal = require('./config/passport-local-strategy');
+const MongoStore = require('connect-mongo');
+const sassMiddleware = require('node-sass-middleware');
+
+app.use(sassMiddleware( {
+    src: './asserts/scss',
+    dest: './asserts/css',
+    debug: true,
+    outputStyle: 'expanded',
+    prefix: '/css'
+}));
 
 // Middleware to decrypt the form encripted data
 app.use(express.urlencoded());
 // Middleware to create and alter keys
 app.use(cookieParser());
-
 
 // using Static files.
 app.use(express.static('./asserts'));
@@ -30,6 +39,7 @@ app.set('layout extractScripts', true);
 app.set('view engine', 'ejs');
 app.set('views', './views');
 
+// MongoStore is used to store session cookie in the db.
 app.use(session({
     name : 'codeial',
     // TODO change the secret before deployment in production mode
@@ -39,7 +49,15 @@ app.use(session({
     cookie : {
         // in milliseconds
         maxAge : (1000 * 60 * 100)
-    }
+    }, 
+    store: MongoStore.create(
+        {
+            mongoUrl: 'mongodb://localhost/codeial_development',
+            autoRemove: 'disabled'
+        }, function(err) {
+            console.log(err || 'connect-mongob setup ok');
+        }
+    )
 }));
 
 app.use(passport.initialize());

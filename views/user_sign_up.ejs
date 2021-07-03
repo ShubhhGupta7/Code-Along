@@ -1,9 +1,29 @@
-<h1> Sign Up </h1>
+<link rel="stylesheet" href="/css/header.css">
+<link rel="stylesheet" href="/css/footer.css">
+<link rel="stylesheet" href="/css/user_sign_up.css">
 
-<form action="/users/create" method="POST">
-    <input type="text" name = "name" required placeholder="Your Name">
-    <input type="email" name = "email" required placeholder="Your Email">
-    <input type="password" name = "password" required placeholder="Password">
-    <input type="password" name = "confirm_password" required placeholder="Confirm Password">
-    <input type="submit" value = "SignUp">
-</form>
+<main>
+    <div class="sign-in-container">
+        <div class="heading-container">
+            <h2> Sign Up </h2>
+        </div>
+        <form action="/users/create" method="POST">
+            <div class="input-container">
+                <input type="text" name = "name" required placeholder="Your Name">
+            </div>
+            <div class="input-container">
+                <input type="email" name = "email" required placeholder="Your Email">
+            </div>
+            <div class="input-container">
+                <input type="password" name = "password" required placeholder="Password">
+            </div>
+            <div class="input-container">
+                <input type="password" name = "confirm_password" required placeholder="Confirm Password">
+            </div>
+            <div class="input-container btn">
+                <input type="submit" value = "Sign Up">
+            </div>
+        </form>
+    </div>
+</main>
+

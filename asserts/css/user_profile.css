@@ -1,0 +1,9 @@
+body {
+  background-color: whitesmoke;
+  margin: 0;
+  padding: 0px;
+}
+
+body main {
+  height: 100vh;
+}

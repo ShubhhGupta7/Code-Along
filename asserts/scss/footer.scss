@@ -1,0 +1,57 @@
+// Footer SCSS Code
+
+footer {
+    width: 98vw;
+    margin: auto;
+    margin-bottom: 1vh;
+    background-color: black;
+    border-radius: 0.8rem;
+    .footer-main-container {
+        display: flex;
+        align-items: flex-start;
+        justify-content: flex-start;
+
+        .footer-heading-container {
+            .author-container {
+                a {
+                    text-decoration: none;
+                    h3 {
+                        color: white;    
+                        &:hover {
+                            transition: all 0.5s;
+                            color: red;
+                        }
+                    }
+                }
+            }
+        }
+        div {
+            margin-left: 2vw; 
+            h3 {
+                font-size: .8rem;
+                font-weight: bolder;
+                color: white;
+            }
+        }
+        ul {
+            list-style: none;
+            li {
+                height: 0.9rem;
+                a {
+                    text-decoration: none;
+                    font-family: inherit;
+                    color: white;
+                    font-size: 0.7rem;
+                    font-weight: bolder;
+
+                    &:hover {
+                        transition: all 0.5s;
+                        color: red;
+                        font-size: 0.71rem;
+                    }
+                }
+            }
+        }
+    }
+}
+

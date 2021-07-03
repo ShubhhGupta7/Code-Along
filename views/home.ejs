@@ -1,3 +1,20 @@
 <link rel="stylesheet" href="/css/home_layout.css">
-
+<link rel="stylesheet" href="/css/header.css">
+<link rel="stylesheet" href="/css/footer.css">
 <h1>Codeial / <%= title %> </h1>
+
+<section id=feed-post>
+    <div id="heading-container">
+        <h4>Posts</h4>
+    </div>
+
+    <div id="form-container">
+        <form action="/users/posts/create-post" method="POST">
+            <textarea name="post-input" id="" cols="30" rows="3" placeholder="Type Here..."></textarea>
+
+            <button type="submit">Post</button>
+        </form>
+    </div>
+</section>
+
+

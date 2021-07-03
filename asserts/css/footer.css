@@ -1,0 +1,58 @@
+footer {
+  width: 98vw;
+  margin: auto;
+  margin-bottom: 1vh;
+  background-color: black;
+  border-radius: 0.8rem;
+}
+
+footer .footer-main-container {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+footer .footer-main-container .footer-heading-container .author-container a {
+  text-decoration: none;
+}
+
+footer .footer-main-container .footer-heading-container .author-container a h3 {
+  color: white;
+}
+
+footer .footer-main-container .footer-heading-container .author-container a h3:hover {
+  transition: all 0.5s;
+  color: red;
+}
+
+footer .footer-main-container div {
+  margin-left: 2vw;
+}
+
+footer .footer-main-container div h3 {
+  font-size: .8rem;
+  font-weight: bolder;
+  color: white;
+}
+
+footer .footer-main-container ul {
+  list-style: none;
+}
+
+footer .footer-main-container ul li {
+  height: 0.9rem;
+}
+
+footer .footer-main-container ul li a {
+  text-decoration: none;
+  font-family: inherit;
+  color: white;
+  font-size: 0.7rem;
+  font-weight: bolder;
+}
+
+footer .footer-main-container ul li a:hover {
+  transition: all 0.5s;
+  color: red;
+  font-size: 0.71rem;
+}
