@@ -1,0 +1,43 @@
+<li id=post class="sub-container">    
+    <div class="post-header">
+        <div class="post-heading">
+            <h4> <%= post.user.name %> 
+        </div>
+
+        <div class="post-options-dropdown" style="float: right;" >
+            <i class="fas fa-ellipsis-h" id="dropdown-btn"></i>
+            <div class="post-options-dropdown-content" >
+                <% if(locals.user && locals.user.id == post.user.id) { %>
+                    <a href="/posts/destroy/<%=post.id%>">Delete</a>
+                <% } %>
+            </div>
+        </div>
+    </div>
+    
+        
+    </h4>
+    <p> <%= post.content %> </p>
+    <% if(locals.user) { %>  
+        <div id='form-container'>
+            <form action="/comments/create" id="comment-form" method="POST">
+                <div>
+                    <textarea name="content" id="text-area" cols="20" rows="1" placeholder="Write a comment..." required></textarea>
+                </div>
+                <input type="hidden" value = "<%= post._id %>" name = "post">
+                <div>
+                    <button type="submit">Post Comment</button>
+                </div>
+            </form>
+        </div> 
+    <% } %>
+
+        <h4>Comments</h4>
+        <div id="comments-display-container">
+            <ul id="post-comments-<%=post._id%>">
+                <% for(comment of post.comments) { %>
+                    <%- include('_comment') -%>
+                <% } %>
+            </ul>
+        </div>
+
+</li>

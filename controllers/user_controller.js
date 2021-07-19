@@ -1,10 +1,29 @@
 const User = require('../models/user');
 
+// profile page
 module.exports.profile = function(req, res) {
-
-    return res.render('user_profile', {
-        title : 'User'
+    User.findById(req.params.id, function(err, user) {
+        return res.render('user_profile', {
+            title : 'User',
+            profile_user : user
+        });
     });
+}
+
+// Update the current loggedin user info
+module.exports.update = function(req, res) {
+    if(req.user.id == req.params.id) {
+        
+        // One way to do it
+        // User.findByIdAndUpdate(req.user.id, {name:body.name, email: body.email}, function() {});
+    
+        // Second way
+        User.findByIdAndUpdate(req.user.id, req.body, function(err, user) {
+            return res.redirect('back');
+        });
+    } else {
+        return res.status(401).send('Unauthorized');
+    }
 }
 
 // render the signIn page

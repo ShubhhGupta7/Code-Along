@@ -4,8 +4,19 @@
 <h1> Codeial / <%= title %> </h1>
 
 <main>
-    <p><%= user.name%></p>
-    <p><%= user.email %></p>
+    <p><%= profile_user.name%></p>
+    <p><%= profile_user.email %></p>
+
+    <% if(profile_user.id == user.id) { %> 
+        <!-- If the user profile matches with the logged in user than show the edit form -->
+        <form action="/users/update/<%= profile_user.id%>" method="POST">
+            <input type="text" name="name" placeholder="Your username" value="<%= profile_user.name%>" required>
+            <input type="email" name="email" placeholder="Your email" value="<%= profile_user.email%>" required>
+
+            <input type="submit" value="Update">
+        </form>
+    <% } %>
+    
 </main>
 
 

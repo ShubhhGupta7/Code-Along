@@ -3,12 +3,17 @@
     <div class="application-heading-container ">
         <h2>Codeial</h2>
     </div>
+
+    <div class="application-heading-container ">
+        <h2>Search Bar</h2>
+    </div>
+
     <div class="horizontal-list nav-container">
         <nav>
             <ul>
                 <% if(locals.user) { %>
                         <li>
-                            <a href="/users/Profile">
+                            <a href="/users/Profile/<%= user.id%>">
                                 <%= user.name %>
                             </a>
                         </li>

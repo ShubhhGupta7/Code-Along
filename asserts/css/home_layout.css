@@ -1,11 +1,13 @@
 body {
-  background-color: whitesmoke;
   color: black;
   font-family: auto;
 }
 
 body main {
   text-align: center;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
 }
 
 body main section {
@@ -13,7 +15,7 @@ body main section {
   width: 26vw;
   display: inline-block;
   height: 85vh;
-  margin: 1vh 1vw;
+  margin: 0.2vh 0.2vw;
   padding: 0.5rem;
 }
 
@@ -28,13 +30,18 @@ body main section .sub-container {
   width: 100%;
 }
 
+body main #navigation-search-container {
+  width: 20vw;
+}
+
 body main #feed-post {
-  width: 39vw;
+  width: 57vw;
+  min-width: 350px;
   overflow-y: scroll;
 }
 
 body main #feed-post #form-container {
-  height: 15vh;
+  height: 10vh;
 }
 
 body main #feed-post #form-container #post-form, body main #feed-post #form-container #comment-form {
@@ -69,7 +76,7 @@ body main #feed-post #form-container #text-area:focus {
 
 body main #feed-post #comments-display-container {
   width: 100%;
-  height: 18vh;
+  max-height: 18vh;
   overflow-y: scroll;
 }
 
@@ -84,11 +91,78 @@ body main #feed-post ul li {
 
 body main #feed-post ul li h4 {
   margin: .5rem 0.2rem;
-  color: #673ab7;
+  color: black;
   font-size: 0.8rem;
 }
 
 body main #feed-post ul li p {
   margin: 0.2rem;
   font-size: 0.8rem;
+}
+
+body main #feed-post .post-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+body main #feed-post .post-header .post-options-dropdown {
+  display: inline-block;
+  position: relative;
+}
+
+body main #feed-post .post-header .post-options-dropdown:hover .post-options-dropdown-content {
+  display: block;
+}
+
+body main #feed-post .post-header .post-options-dropdown #dropdown-btn {
+  display: block;
+  margin-top: .5rem;
+  cursor: pointer;
+}
+
+body main #feed-post .post-header .post-options-dropdown .post-options-dropdown-content {
+  display: none;
+  position: absolute;
+  width: 70px;
+  z-index: 1;
+  font-size: 12px;
+}
+
+body main #feed-post .post-header .post-options-dropdown .post-options-dropdown-content a {
+  padding: 5px;
+  text-decoration: none;
+  color: black;
+  background-color: white;
+  display: block;
+}
+
+body main #feed-post .post-header .post-options-dropdown .post-options-dropdown-content a:hover {
+  background-color: whitesmoke;
+}
+
+body main #friend-chat-container {
+  width: 20vw;
+  min-width: 150px;
+}
+
+body main #friend-chat-container .sub-container {
+  height: 80vh;
+  overflow-y: scroll;
+}
+
+body main #friend-chat-container ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  text-align: left;
+}
+
+body main #friend-chat-container ul li p {
+  margin: 8px 0px;
+}
+
+body main #friend-chat-container ul li p a {
+  color: black;
+  text-decoration: none;
 }

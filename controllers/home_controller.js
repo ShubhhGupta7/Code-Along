@@ -46,11 +46,13 @@ module.exports.home  = function(req, res) {
             console.log('Error in fetching data from the user.');
         }
 
-
-        return res.render('home', {
-            'title' : 'Codeial | Home',
-            'post_list' : posts
-        });        
+        User.find({}, function(err, users) {
+            return res.render('home', {
+                'title' : 'Codeial | Home',
+                'post_list' : posts,
+                'all_users' : users
+            }); 
+        });       
     })
 };
 
