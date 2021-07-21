@@ -1,6 +1,8 @@
 body {
-  color: black;
-  font-family: auto;
+  color: grey;
+  font-family: Quicksand;
+  font-weight: bold;
+  font-size: 10px;
 }
 
 body main {
@@ -14,20 +16,19 @@ body main section {
   box-sizing: border-box;
   width: 26vw;
   display: inline-block;
-  height: 85vh;
   margin: 0.2vh 0.2vw;
   padding: 0.5rem;
+  line-height: 1rem;
 }
 
 body main section .sub-container {
-  background-color: #ccc9c952;
-  border-left: 1px solid lightgrey;
-  box-shadow: 1px 1px 0px 1px #cac0c0;
+  font-size: .3rem;
+  color: grey;
   box-sizing: border-box;
-  border-radius: 0.8rem;
   padding: 0.5rem;
-  margin: 0.5rem 0rem;
+  margin: 2rem 0rem;
   width: 100%;
+  border-bottom: 1px solid lightgrey;
 }
 
 body main #navigation-search-container {
@@ -37,7 +38,6 @@ body main #navigation-search-container {
 body main #feed-post {
   width: 57vw;
   min-width: 350px;
-  overflow-y: scroll;
 }
 
 body main #feed-post #form-container {
@@ -55,29 +55,69 @@ body main #feed-post #form-container #post-form, body main #feed-post #form-cont
 }
 
 body main #feed-post #form-container button {
-  background-color: coral;
+  background-color: #2496eb;
   color: white;
-  font-size: 0.7rem;
+  font-weight: bold;
   border: none;
+  font-size: 0.7rem;
   padding: .5rem 1rem;
-  border-radius: 0.8rem;
 }
 
 body main #feed-post #form-container #text-area {
-  border-radius: 0.8rem;
+  border-radius: 0.4rem;
+  border: 1px solid grey;
   padding: .5rem;
-  border: none;
   font-size: 0.7rem;
 }
 
 body main #feed-post #form-container #text-area:focus {
   outline: none;
+  border-color: dodgerblue;
 }
 
 body main #feed-post #comments-display-container {
   width: 100%;
-  max-height: 18vh;
-  overflow-y: scroll;
+}
+
+body main #feed-post #comments-display-container #comment .comment-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+body main #feed-post #comments-display-container #comment .comment-header .comment-options-dropdown {
+  display: inline-block;
+  position: relative;
+}
+
+body main #feed-post #comments-display-container #comment .comment-header .comment-options-dropdown:hover .comment-options-dropdown-content {
+  display: block;
+}
+
+body main #feed-post #comments-display-container #comment .comment-header .comment-options-dropdown #dropdown-btn {
+  display: block;
+  margin-top: .6rem;
+  cursor: pointer;
+}
+
+body main #feed-post #comments-display-container #comment .comment-header .comment-options-dropdown .comment-options-dropdown-content {
+  display: none;
+  position: absolute;
+  width: 70px;
+  z-index: 1;
+  font-size: 12px;
+}
+
+body main #feed-post #comments-display-container #comment .comment-header .comment-options-dropdown .comment-options-dropdown-content a {
+  padding: 5px;
+  text-decoration: none;
+  color: black;
+  background-color: white;
+  display: block;
+}
+
+body main #feed-post #comments-display-container #comment .comment-header .comment-options-dropdown .comment-options-dropdown-content a:hover {
+  background-color: whitesmoke;
 }
 
 body main #feed-post ul {
@@ -97,7 +137,7 @@ body main #feed-post ul li h4 {
 
 body main #feed-post ul li p {
   margin: 0.2rem;
-  font-size: 0.8rem;
+  font-size: 0.7rem;
 }
 
 body main #feed-post .post-header {
@@ -117,7 +157,7 @@ body main #feed-post .post-header .post-options-dropdown:hover .post-options-dro
 
 body main #feed-post .post-header .post-options-dropdown #dropdown-btn {
   display: block;
-  margin-top: .5rem;
+  margin-top: .6rem;
   cursor: pointer;
 }
 
@@ -147,8 +187,11 @@ body main #friend-chat-container {
 }
 
 body main #friend-chat-container .sub-container {
-  height: 80vh;
+  margin: 0;
+  font-size: .7rem;
+  height: 44vh;
   overflow-y: scroll;
+  border: none;
 }
 
 body main #friend-chat-container ul {
@@ -163,6 +206,11 @@ body main #friend-chat-container ul li p {
 }
 
 body main #friend-chat-container ul li p a {
-  color: black;
+  color: grey;
   text-decoration: none;
+}
+
+body main #friend-chat-container ul li p a:hover {
+  transition: all 0.5s;
+  color: dodgerblue;
 }

@@ -1,25 +1,33 @@
 // Footer SCSS Code
 
 footer {
-    width: 98vw;
-    margin: auto;
-    margin-bottom: 1vh;
-    background-color: black;
-    border-radius: 0.8rem;
+    box-sizing: border-box;
+    width: 100%;
+    border-top: 1px solid lightgrey;
     .footer-main-container {
         display: flex;
         align-items: flex-start;
         justify-content: flex-start;
 
+        #logo-container {
+            font-family: fangsong;
+            font-weight: lighter;
+            font-size: 2rem;
+            span {
+                color: black;    
+            }
+        }
+
         .footer-heading-container {
+            margin: 4rem;
+            text-align: center;
             .author-container {
                 a {
                     text-decoration: none;
                     h3 {
-                        color: white;    
+                        color: grey;    
                         &:hover {
                             transition: all 0.5s;
-                            color: red;
                         }
                     }
                 }
@@ -30,24 +38,22 @@ footer {
             h3 {
                 font-size: .8rem;
                 font-weight: bolder;
-                color: white;
             }
         }
         ul {
             list-style: none;
             li {
-                height: 0.9rem;
+                height: 1.5rem;
                 a {
+                    font-size: 0.6rem;
                     text-decoration: none;
-                    font-family: inherit;
-                    color: white;
-                    font-size: 0.7rem;
-                    font-weight: bolder;
-
+                    letter-spacing: .2px;
+                    color: #615858;
+                    font-weight: none;
                     &:hover {
                         transition: all 0.5s;
-                        color: red;
-                        font-size: 0.71rem;
+                        color: black;
+                        font-weight: bolder;
                     }
                 }
             }

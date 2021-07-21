@@ -1,4 +1,12 @@
+body {
+    font-family: Quicksand;
+    font-size: 10px;
+    font-weight: bold;   
+}
+
 main {
+    font-family: initial;
+    font-size: 1rem;
     text-align: center;
     background-color: whitesmoke;
     .sign-in-container {

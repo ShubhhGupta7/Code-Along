@@ -5,7 +5,7 @@
         </div>
 
         <div class="post-options-dropdown" style="float: right;" >
-            <i class="fas fa-ellipsis-h" id="dropdown-btn"></i>
+            <i class="fas fa-ellipsis-h" id="dropdown-btn" style="font-size: 0.7rem"></i>
             <div class="post-options-dropdown-content" >
                 <% if(locals.user && locals.user.id == post.user.id) { %>
                     <a href="/posts/destroy/<%=post.id%>">Delete</a>

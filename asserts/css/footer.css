@@ -1,9 +1,7 @@
 footer {
-  width: 98vw;
-  margin: auto;
-  margin-bottom: 1vh;
-  background-color: black;
-  border-radius: 0.8rem;
+  box-sizing: border-box;
+  width: 100%;
+  border-top: 1px solid lightgrey;
 }
 
 footer .footer-main-container {
@@ -12,17 +10,31 @@ footer .footer-main-container {
   justify-content: flex-start;
 }
 
+footer .footer-main-container #logo-container {
+  font-family: fangsong;
+  font-weight: lighter;
+  font-size: 2rem;
+}
+
+footer .footer-main-container #logo-container span {
+  color: black;
+}
+
+footer .footer-main-container .footer-heading-container {
+  margin: 4rem;
+  text-align: center;
+}
+
 footer .footer-main-container .footer-heading-container .author-container a {
   text-decoration: none;
 }
 
 footer .footer-main-container .footer-heading-container .author-container a h3 {
-  color: white;
+  color: grey;
 }
 
 footer .footer-main-container .footer-heading-container .author-container a h3:hover {
   transition: all 0.5s;
-  color: red;
 }
 
 footer .footer-main-container div {
@@ -32,7 +44,6 @@ footer .footer-main-container div {
 footer .footer-main-container div h3 {
   font-size: .8rem;
   font-weight: bolder;
-  color: white;
 }
 
 footer .footer-main-container ul {
@@ -40,19 +51,19 @@ footer .footer-main-container ul {
 }
 
 footer .footer-main-container ul li {
-  height: 0.9rem;
+  height: 1.5rem;
 }
 
 footer .footer-main-container ul li a {
+  font-size: 0.6rem;
   text-decoration: none;
-  font-family: inherit;
-  color: white;
-  font-size: 0.7rem;
-  font-weight: bolder;
+  letter-spacing: .2px;
+  color: #615858;
+  font-weight: none;
 }
 
 footer .footer-main-container ul li a:hover {
   transition: all 0.5s;
-  color: red;
-  font-size: 0.71rem;
+  color: black;
+  font-weight: bolder;
 }

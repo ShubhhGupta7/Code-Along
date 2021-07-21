@@ -3,29 +3,21 @@
 }
 
 header {
-  font-family: auto;
-  height: 8vh;
-  background-image: url(../images/bg.jpg);
-  background-size: cover;
-  background-repeat: no-repeat;
-  border-bottom: .2rem solid midnightblue;
-  margin: auto;
-  margin-top: 1vh;
-  width: 98vw;
-  border-radius: 0.8rem;
+  font-family: Quicksand;
+  height: 7vh;
+  background-color: white;
+  border-bottom: 1px solid lightgrey;
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
 header .application-heading-container h2 {
-  font-family: inherit;
-  font-style: italic;
-  color: white;
-  letter-spacing: -1px;
-  font-weight: bold;
+  font-family: Quicksand;
+  color: grey;
   margin-left: 5vw;
-  text-shadow: 2px 2px 0px black;
+  font-size: 1rem;
+  font-weight: bolder;
 }
 
 header .horizontal-list {
@@ -44,12 +36,12 @@ header .horizontal-list ul li {
 
 header .horizontal-list ul li a {
   text-decoration: none;
-  color: white;
+  color: black;
   font-size: .7rem;
 }
 
 header .horizontal-list ul li a:hover {
   transition: all 1s;
-  color: red;
+  color: dodgerblue;
   font-size: .71rem;
 }
