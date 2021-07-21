@@ -1,45 +1,89 @@
 body {
     font-family: Quicksand;
-    font-size: 10px;
-    font-weight: bold;   
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;   
 }
 
 main {
-    font-family: initial;
-    font-size: 1rem;
-    text-align: center;
-    background-color: whitesmoke;
-    .sign-in-container {
-        display: inline-block;
-        margin: 1rem 0rem 10rem 0rem;
-        padding: 0rem 1rem 4rem 1rem; 
-        border: .1px solid #1d1b1b2b;
-        background-color: white;
-        .heading-container {
-            display: inline-block;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    #description {
+        padding: 15rem 5rem;
+        height: 93vh;
+        width: 50%;
+        box-sizing: border-box;
+        background-image: linear-gradient(
+            153deg
+            ,hsla(0,0%,100%,0),rgba(56,153,236,.12)),linear-gradient(#f0f4f7,#f0f4f7);
+
+        #logo-container {
+            margin-top: 3rem;
+            font-size: 5rem;
+            font-family: fangsong;
+            font-weight: lighter;
         }
-        .input-container {
-            display: block;
-            margin-bottom: .2rem;
-            input {
-                display: inline-block;
-                font-size: 0.5rem;
-                padding: 0.2rem 3.5rem 0.2rem 0.1rem;
+
+        h3 {
+            font-size: 1.5rem;
+        }
+
+        .author-container {
+            a {
+                color: grey;
+                font-size: 2rem;
+                text-decoration: none;
+                &:hover {
+                    transition: all 1s ease-in-out;
+                    font-size: 3rem;
+                    color:black;
+                }
+            }
+        }
+
+    }
+
+    .sign-in-container {
+        padding: 5rem;
+        height: 93vh;
+        width: 50%;
+        box-sizing: border-box;
+        background-color: #3174a0;
+
+        .heading-container {
+            font-family: fangsong;
+            font-size: 5rem;
+            h2 {
+                margin: 0 0 1rem 0;
+            }
+        }
+
+        input {
+            font-size: 1rem;
+            background: none;
+            font-weight: bold;
+            border: .1rem solid black;
+            color: black;
+            margin: .3rem;
+            padding: .7rem 9rem 0.7rem 1rem;
+
+            &::placeholder {
+                color: white;
+                font-weight: lighter;
             }
         }
 
         .btn {
-            margin-top: .5rem;
             input {
-                padding: 0.2rem 4.2rem;
-                background-color: coral;
-                color: white;
-                font-weight: 700;
-                border: none;
-                &:focus {
-                    outline: none;
-                }
+                font-size: 1.5rem;
+                font-family: fangsong;
+                font-weight: bolder;
+                padding: .5rem 9.5rem;
             }
+
         }
     }
 }

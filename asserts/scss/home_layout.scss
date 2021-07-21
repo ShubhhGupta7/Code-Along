@@ -2,7 +2,6 @@ body {
     color: grey;
     font-family: Quicksand;
     font-weight: bold;
-    font-size: 10px;
     main {
         text-align: center;
         display: flex;
@@ -14,8 +13,8 @@ body {
             width: 26vw;
             display: inline-block;
             margin: 0.2vh 0.2vw;
-            padding: 0.5rem;
-            line-height: 1rem;
+            padding: 1rem;
+            line-height: 1.5rem;
             .sub-container {
                 font-size: .3rem;
                 color: grey;
@@ -47,23 +46,26 @@ body {
                 }
 
                 button {
-                    background-color: #2496eb;
                     color: white;
+                    background-color: dodgerblue;
+
                     font-weight: bold;
+                    font-size: 1rem;
+
+                    border-radius: 0.2rem;             
                     border: none;
-                    font-size: 0.7rem;
-                    padding: .5rem 1rem;
+                    padding: .5rem 0.7rem;
+                    &:hover {
+                        transition: all 0.5s ease-in-out;
+                        background-color: rgba(12, 117, 223, 0.884);
+                        color: whitesmoke;
+                    }
                 }
 
                 #text-area {
-                    border-radius: 0.4rem;
                     border: 1px solid grey;
-                    padding: .5rem;
-                    font-size: 0.7rem;
-                    &:focus {
-                        outline: none;
-                        border-color: dodgerblue;
-                    }
+                    padding: .5rem ;
+                    font-size: 1.2rem;
                 }
             }
 
@@ -95,7 +97,7 @@ body {
                                 
                                 width: 70px;
                                 z-index: 1;
-                                font-size: 12px;
+                                font-size: 1rem;
                                 a { 
                                     padding: 5px;
                                     text-decoration: none;
@@ -118,14 +120,14 @@ body {
                 li {
                     text-align: left;
                     h4 {
-                        margin: .5rem 0.2rem;
+                        margin: 1rem 0.2rem;
                         color: black;
-                        font-size: 0.8rem;
+                        font-size: 1.2rem;
                     }
 
                     p {
-                        margin: 0.2rem;
-                        font-size: 0.7rem;
+                        margin: 0.3rem;
+                        font-size: 1.1rem;
                     }
                 }
             }
@@ -154,7 +156,7 @@ body {
                         
                         width: 70px;
                         z-index: 1;
-                        font-size: 12px;
+                        font-size: 1rem;
                         a { 
                             padding: 5px;
                             text-decoration: none;
@@ -176,7 +178,7 @@ body {
             
             .sub-container {
                 margin: 0;
-                font-size: .7rem;
+                font-size: 1.2rem;
                 height: 44vh;
                 overflow-y: scroll;
                 border: none;
@@ -188,14 +190,14 @@ body {
                 text-align: left;
                 li {
                     p {
-                        margin: 8px 0px;
+                        margin: 1.5rem 0;
                         a {
                             color: grey;
                             text-decoration: none;
 
                             &:hover {
                                 transition: all 0.5s;
-                                color: dodgerblue;
+                                color: black;
                             }
                         }
                     }

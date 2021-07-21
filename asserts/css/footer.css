@@ -13,7 +13,7 @@ footer .footer-main-container {
 footer .footer-main-container #logo-container {
   font-family: fangsong;
   font-weight: lighter;
-  font-size: 2rem;
+  font-size: 4rem;
 }
 
 footer .footer-main-container #logo-container span {
@@ -34,7 +34,8 @@ footer .footer-main-container .footer-heading-container .author-container a h3 {
 }
 
 footer .footer-main-container .footer-heading-container .author-container a h3:hover {
-  transition: all 0.5s;
+  transition: all 1s;
+  color: black;
 }
 
 footer .footer-main-container div {
@@ -42,7 +43,7 @@ footer .footer-main-container div {
 }
 
 footer .footer-main-container div h3 {
-  font-size: .8rem;
+  font-size: 1.1rem;
   font-weight: bolder;
 }
 
@@ -51,11 +52,11 @@ footer .footer-main-container ul {
 }
 
 footer .footer-main-container ul li {
-  height: 1.5rem;
+  height: 2.5rem;
 }
 
 footer .footer-main-container ul li a {
-  font-size: 0.6rem;
+  font-size: 1rem;
   text-decoration: none;
   letter-spacing: .2px;
   color: #615858;

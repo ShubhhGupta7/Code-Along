@@ -2,10 +2,76 @@ body {
   margin: 0;
   padding: 0px;
   font-family: Quicksand;
-  font-size: 10px;
   font-weight: bold;
+  text-align: center;
 }
 
 body main {
   height: 100vh;
+}
+
+body main > section {
+  box-sizing: border-box;
+  display: inline-block;
+  margin: auto;
+}
+
+body main #profile-view-container {
+  width: 100%;
+  padding: 4rem;
+}
+
+body main #profile-view-container #information-section {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  border-bottom: 1px solid lightgrey;
+}
+
+body main #profile-view-container #information-section .info {
+  height: 100px;
+  width: 300px;
+  padding-bottom: 2rem;
+}
+
+body main #profile-view-container #information-section .info h2 {
+  color: black;
+}
+
+body main #profile-view-container #information-section .info h3 {
+  color: grey;
+}
+
+body main #post-profile-picture-container {
+  width: 700px;
+}
+
+body main #profile-edit-container {
+  width: 300px;
+  padding: 1rem;
+}
+
+body main #profile-edit-container input {
+  display: block;
+  margin: auto;
+  margin-bottom: 1rem;
+  padding: .5rem 1rem .5rem 1rem;
+  font-weight: bold;
+  text-align: left;
+  font-size: 1.2rem;
+}
+
+body main #profile-edit-container #btn {
+  color: white;
+  background-color: dodgerblue;
+  border-radius: 0.2rem;
+  border: none;
+  padding: .5rem 0.7rem;
+}
+
+body main #profile-edit-container #btn:hover {
+  transition: all 0.5s ease-in-out;
+  background-color: rgba(12, 117, 223, 0.884);
+  color: whitesmoke;
 }
