@@ -2,12 +2,14 @@
 
 footer {
     box-sizing: border-box;
-    width: 100%;
+    width: 100vw;
     border-top: 1px solid lightgrey;
+
     .footer-main-container {
         display: flex;
         align-items: flex-start;
         justify-content: flex-start;
+        flex-wrap: wrap;
 
         #logo-container {
             font-family: fangsong;
@@ -19,7 +21,10 @@ footer {
         }
 
         .footer-heading-container {
-            margin: 4rem;
+            height: 200px;
+            width: 500px;
+
+            margin: 2rem;
             text-align: center;
             .author-container {
                 a {
@@ -58,6 +63,11 @@ footer {
                     }
                 }
             }
+        }
+
+        .footer-links-container {
+            height: 300px;
+            width: 150px;
         }
     }
 }

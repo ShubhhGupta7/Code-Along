@@ -9,6 +9,7 @@ body main {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  justify-content: space-evenly;
 }
 
 body main section {
@@ -49,8 +50,13 @@ body main #feed-post #form-container #post-form, body main #feed-post #form-cont
   height: 100%;
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: flex-start;
   align-items: center;
+}
+
+body main #feed-post #form-container #post-form > div, body main #feed-post #form-container #comment-form > div {
+  margin: 1rem;
+  margin-left: 0;
 }
 
 body main #feed-post #form-container button {
@@ -183,13 +189,13 @@ body main #feed-post .post-header .post-options-dropdown .post-options-dropdown-
 
 body main #friend-chat-container {
   width: 20vw;
-  min-width: 150px;
+  min-width: 250px;
 }
 
 body main #friend-chat-container .sub-container {
   margin: 0;
   font-size: 1.2rem;
-  height: 44vh;
+  max-height: 50vh;
   overflow-y: scroll;
   border: none;
 }

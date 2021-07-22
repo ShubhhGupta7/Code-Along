@@ -5,8 +5,19 @@
 
 <main>
 
-    <section id="navigation-search-container">
-
+    <section id="friend-chat-container">
+        <div class="sub-container">
+            <h4 style="color: black;">Users</h4>
+            <ul>
+                <% for(friend of all_users) { %> 
+                    <li>
+                        <p>
+                            <a href="/users/profile/<%=friend.id%>"><%=friend.name%></a>
+                        </p>
+                    </li>
+                <% } %>        
+            </ul>
+        </div>
     </section>
 
     <section id="feed-post">
@@ -31,20 +42,6 @@
             </ul>
         </div>
     </section>    
-
-    <section id="friend-chat-container">
-        <div class="sub-container">
-            <h4 style="color: black;">Friends</h4>
-            <ul>
-                <% for(friend of all_users) { %> 
-                    <li>
-                        <p>
-                            <a href="/users/profile/<%=friend.id%>"><%=friend.name%></a>
-                        </p>
-                    </li>
-                <% } %>        
-            </ul>
-        </div>
-    </section>
+    
 </main>
                     

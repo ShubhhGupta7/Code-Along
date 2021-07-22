@@ -7,7 +7,11 @@ body {
     text-align: center;
 
     main {
-        height: 100vh;
+
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
 
         > section {
             box-sizing: border-box;
@@ -19,7 +23,6 @@ body {
         
         #profile-view-container {
             width: 100%;
-            padding: 4rem;
             
             #information-section {
                 display: flex;
@@ -44,15 +47,61 @@ body {
             }
         }
 
-        #post-profile-picture-container {
-            width: 700px;
+        #details-profile-picture-container {
+            width: 70%;
+            margin: 0;
+            h2 {
+                color: black;
+            }
+            h3 {
+                color: grey;
+            }
+
+            #details, #profile {
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+                justify-content: space-evenly;
+
+                width: 100%;
+            
+                > div {
+                        width: 300px;
+                }
+            }
+
+            #profile {
+                min-height: 300px;
+                
+                #profile-picture {
+                    img {
+                        height: 150px;
+                        width: 150px;
+                        border-radius: 50%;
+                        border: 1px solid grey;
+                        box-shadow: 0px 0px 6px 2px lightgrey;
+                    }
+                }
+
+                #about {
+                    height: 200px;
+                    width: 400px;
+                    h3 {
+                        width: inherit;
+                        text-align: left;
+                        overflow-y: scroll;
+                    }
+                }
+            }
+
         }
 
         #profile-edit-container {
             width: 300px;
             padding: 1rem;
+            margin: 0;
 
-            input {
+            input ,textarea {
                 display: block;
 
                 margin : auto;

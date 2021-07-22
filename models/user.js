@@ -13,6 +13,18 @@ const userSchema = new mongoose.Schema({
     name : {
         type : String,
         required : true
+    },
+    college : {
+        type: String
+    },
+    codechef : {
+        type : String
+    },
+    codeforces : {
+        type: String
+    },
+    about : {
+        type: String
     }
 }, {
     timestamps : true

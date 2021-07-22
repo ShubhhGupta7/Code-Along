@@ -7,7 +7,10 @@ body {
 }
 
 body main {
-  height: 100vh;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
 }
 
 body main > section {
@@ -18,7 +21,6 @@ body main > section {
 
 body main #profile-view-container {
   width: 100%;
-  padding: 4rem;
 }
 
 body main #profile-view-container #information-section {
@@ -43,16 +45,61 @@ body main #profile-view-container #information-section .info h3 {
   color: grey;
 }
 
-body main #post-profile-picture-container {
-  width: 700px;
+body main #details-profile-picture-container {
+  width: 70%;
+  margin: 0;
+}
+
+body main #details-profile-picture-container h2 {
+  color: black;
+}
+
+body main #details-profile-picture-container h3 {
+  color: grey;
+}
+
+body main #details-profile-picture-container #details, body main #details-profile-picture-container #profile {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  width: 100%;
+}
+
+body main #details-profile-picture-container #details > div, body main #details-profile-picture-container #profile > div {
+  width: 300px;
+}
+
+body main #details-profile-picture-container #profile {
+  min-height: 300px;
+}
+
+body main #details-profile-picture-container #profile #profile-picture img {
+  height: 150px;
+  width: 150px;
+  border-radius: 50%;
+  border: 1px solid grey;
+  box-shadow: 0px 0px 6px 2px lightgrey;
+}
+
+body main #details-profile-picture-container #profile #about {
+  height: 200px;
+  width: 400px;
+}
+
+body main #details-profile-picture-container #profile #about h3 {
+  width: inherit;
+  text-align: left;
+  overflow-y: scroll;
 }
 
 body main #profile-edit-container {
   width: 300px;
   padding: 1rem;
+  margin: 0;
 }
 
-body main #profile-edit-container input {
+body main #profile-edit-container input, body main #profile-edit-container textarea {
   display: block;
   margin: auto;
   margin-bottom: 1rem;
