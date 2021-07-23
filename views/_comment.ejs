@@ -1,0 +1,17 @@
+<li id="comment">
+        <div class="comment-header">
+            <div class="comment-heading">
+                <h4> <%= comment.user.name %> 
+            </div>
+    
+            <div class="comment-options-dropdown" style="float: right;" >
+                <i class="fas fa-ellipsis-h" id="dropdown-btn" style="font-size: 0.7rem"></i>
+                <div class="comment-options-dropdown-content" >
+                    <% if(locals.user && (locals.user.id == comment.user.id || post.user.id == locals.user.id)) { %>
+                        <a href="/comments/destroy/<%=comment.id%>">Delete</a>
+                    <% } %>
+                </div>
+            </div>
+        </div>
+    <p> <%= comment.content %></p>
+</li>

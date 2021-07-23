@@ -1,0 +1,47 @@
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+<link rel="stylesheet" href="/css/header.css">
+<link rel="stylesheet" href="/css/footer.css">
+<link rel="stylesheet" href="/css/home_layout.css">
+
+<main>
+
+    <section id="friend-chat-container">
+        <div class="sub-container">
+            <h4 style="color: black;">Users</h4>
+            <ul>
+                <% for(friend of all_users) { %> 
+                    <li>
+                        <p>
+                            <a href="/users/profile/<%=friend.id%>"><%=friend.name%></a>
+                        </p>
+                    </li>
+                <% } %>        
+            </ul>
+        </div>
+    </section>
+
+    <section id="feed-post">
+        <%if(locals.user) { %>
+            <div id="form-container" class="sub-container">
+                <form action="/posts/create" method="POST" id="post-form">
+                    <div>
+                        <textarea name="content" id="text-area" cols="20" rows="1" placeholder="What's in your mind?" required></textarea>
+                    </div>
+                    <div>
+                        <button type="submit">Post</button>
+                    </div>
+                </form>
+            </div>
+        <% } %>
+
+        <div id ="post-display-container">
+            <ul>
+                <% for(post of post_list) {%>
+                    <%- include('_post') -%>  
+                <% } %>          
+            </ul>
+        </div>
+    </section>    
+    
+</main>
+                    

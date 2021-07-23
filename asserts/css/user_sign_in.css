@@ -1,0 +1,83 @@
+body {
+  font-family: Quicksand;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+}
+
+main {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+main #description {
+  padding: 15rem 5rem;
+  height: 93vh;
+  width: 50%;
+  box-sizing: border-box;
+  background-image: linear-gradient(153deg, rgba(255, 255, 255, 0), rgba(56, 153, 236, 0.12)), linear-gradient(#f0f4f7, #f0f4f7);
+}
+
+main #description #logo-container {
+  margin-top: 3rem;
+  font-size: 5rem;
+  font-family: fangsong;
+  font-weight: lighter;
+}
+
+main #description h3 {
+  font-size: 1.5rem;
+}
+
+main #description .author-container a {
+  color: grey;
+  font-size: 2rem;
+  text-decoration: none;
+}
+
+main #description .author-container a:hover {
+  transition: all 1s ease-in-out;
+  font-size: 3rem;
+  color: black;
+}
+
+main .sign-in-container {
+  padding: 5rem;
+  height: 93vh;
+  width: 50%;
+  box-sizing: border-box;
+  background-color: #3174a0;
+}
+
+main .sign-in-container .heading-container {
+  font-family: fangsong;
+  font-size: 3rem;
+}
+
+main .sign-in-container .heading-container h2 {
+  margin: 0 0 1rem 0;
+}
+
+main .sign-in-container input {
+  font-size: 1rem;
+  background: none;
+  font-weight: bold;
+  border: .1rem solid black;
+  color: black;
+  margin: .3rem;
+  padding: .7rem 9rem 0.7rem 1rem;
+}
+
+main .sign-in-container input::placeholder {
+  color: white;
+  font-weight: lighter;
+}
+
+main .sign-in-container .btn input {
+  font-size: 1.5rem;
+  font-family: fangsong;
+  font-weight: bolder;
+  padding: .5rem 9.5rem;
+}

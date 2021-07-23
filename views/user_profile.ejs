@@ -1,0 +1,93 @@
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+<link rel="stylesheet" href="/css/header.css">
+<link rel="stylesheet" href="/css/footer.css">
+<link rel="stylesheet" href="/css/user_profile.css">
+
+<main>
+
+    <section id="profile-view-container">
+
+        <div id="information-section">
+            <div class="info">
+                <h2>Username</h2>
+                <h3><%= profile_user.name%></h3>
+            </div>    
+
+            <div class="info">
+                <h2>Codechef</h2> 
+                <h3>
+                    <% for(var i = 0; i < profile_user.codechef; i++) { %>
+                        <i class="fas fa-star" style="color: black;"></i>
+                    <% } %>
+                </h3> 
+            </div>
+
+            <div class="info">
+                <h2>Codeforces</h2> 
+                <h3>
+                    <%= profile_user.codeforces %>
+                </h3>                           
+            </div>
+        </div>
+    
+    </section>
+
+    <section id="details-profile-picture-container">
+        <div id="profile">
+            <div id="profile-picture">
+                <h2>Profile</h2>
+                <img src="https://cdn.icon-icons.com/icons2/1812/PNG/512/4213460-account-avatar-head-person-profile-user_115386.png" alt="Profile Picture">
+            </div>
+    
+            <div id="about">
+                <h2>About</h2>
+                <h3>
+                    <%= profile_user.about %>
+                </h3>
+            </div>
+        </div>
+        
+        <div id="details">
+            <div id="college">
+                <h2>College</h2>
+                <h3>
+                    <%= profile_user.college %>
+                </h3>
+            </div>
+    
+            <div id="email">
+                <h2>Email</h2>
+                <h3>
+                    <%= profile_user.email %>
+                </h3>
+            </div>
+        </div>
+        
+    </section>
+
+    <section id="profile-edit-container">
+        <% if(profile_user.id == user.id) { %> 
+            <!-- If the user profile matches with the logged in user than show the edit form -->
+            <div id="edit-section-heading">
+                <h1>Update</h1>
+            </div>
+
+            <form action="/users/update/<%= profile_user.id%>" method="POST">
+                <input type="text" name="name" placeholder="Your username" value="<%= profile_user.name%>" required>
+
+                <input type="email" name="email" placeholder="Your email" value="<%= profile_user.email%>" required>
+                
+                <input type="text" name="college" placeholder="Your college" value="<%= profile_user.college%>" >
+                
+                <input type="number" name="codechef" placeholder="Your codechef rating" value="<%= profile_user.codechef%>" >
+                <input type="text" name="codeforces" placeholder="Your codeforces rating" value="<%= profile_user.codeforces%>" >
+                <input name="about" placeholder="About" value="<%= profile_user.about%>">
+                <input id="btn" type="submit" value="Update">
+            </form>
+        <% } %>
+        </section>
+    
+    
+</main>
+
+

@@ -1,0 +1,47 @@
+.add-padding {
+  padding: 2rem;
+}
+
+header {
+  font-family: Quicksand;
+  height: 7vh;
+  background-color: white;
+  border-bottom: 1px solid lightgrey;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+header .application-heading-container h2 {
+  font-family: Quicksand;
+  color: grey;
+  margin-left: 5vw;
+  font-size: 1.5rem;
+  font-weight: bolder;
+}
+
+header .horizontal-list {
+  display: inline-block;
+  padding: 0;
+}
+
+header .horizontal-list ul {
+  list-style: none;
+}
+
+header .horizontal-list ul li {
+  display: inline-block;
+  margin-right: 2rem;
+}
+
+header .horizontal-list ul li a {
+  text-decoration: none;
+  color: black;
+  font-size: 1.2rem;
+}
+
+header .horizontal-list ul li a:hover {
+  transition: all 1s;
+  color: dodgerblue;
+  font-size: 1.22rem;
+}

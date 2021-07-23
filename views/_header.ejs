@@ -1,0 +1,47 @@
+<header>
+    <!-- Codeial / Header -->
+    <div class="application-heading-container ">
+        <h2> 
+            <i class="fas fa-chevron-left" style="color: #81d4fa;"></i>
+            <i class="fas fa-chevron-right" style="color: blue;"></i>
+            Codeial
+        </h2>
+    </div>
+
+
+    <div class="horizontal-list nav-container">
+        <nav>
+            <ul>
+                <% if(locals.user) { %>
+                        <li>
+                            <a href="/">
+                                <i class="fas fa-home" style="font-size: 1.5rem;"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/users/Profile/<%= user.id%>">
+                                <%= user.name %>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/users/sign-out">
+                                Sign Out
+                            </a>
+                        </li>
+                <% } else { %> 
+                        <li>
+                            <a href="/users/sign-in">
+                                Sign In
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/users/sign-up">
+                                Sign Up
+                            </a>
+                        </li>
+                <% } %>
+            </ul>
+        </nav>
+    </div>
+</header>
+
