@@ -1,5 +1,7 @@
 const User = require('../models/user');
 
+// Here there is no need of async await as no function uses nested call backs hence no callback hell present.
+
 // profile page
 module.exports.profile = function(req, res) {
     User.findById(req.params.id, function(err, user) {
@@ -19,9 +21,11 @@ module.exports.update = function(req, res) {
     
         // Second way
         User.findByIdAndUpdate(req.user.id, req.body, function(err, user) {
+            req.flash('success', 'User info updated!');
             return res.redirect('back');
         });
     } else {
+        req.flash('error' ,'Not an Anuthorized User');
         return res.status(401).send('Unauthorized');
     }
 }
@@ -52,9 +56,8 @@ module.exports.signUp = function(req, res) {
 module.exports.create = function(req, res) {
     
     if(req.body.password != req.body.confirm_password) {
-        console.log("Passwords Don't Match!");
-        res.redirect('back');
-        return;
+        req.flash('error' ,"Password does'nt match!");
+        return res.redirect('back');
     }
 
     User.findOne({email : req.body.email}, function(err, user) {
@@ -73,6 +76,7 @@ module.exports.create = function(req, res) {
                 }
 
                 console.log(user);
+                req.flash('success', 'Signed Up successfully!');
                 return res.redirect('/users/sign-in');
             });
         } else {
@@ -83,11 +87,14 @@ module.exports.create = function(req, res) {
 
 // sign in and create a session for the user
 module.exports.createSession = function(req, res) {
+    req.flash('success', 'Logged in Successfully.');
     return res.redirect('/');
 }
 
 // Destro the existing session
 module.exports.destroySession = function(req, res) {
     req.logout();
+    req.flash('success', 'You have logout!');
+
     return res.redirect('/');
 }
