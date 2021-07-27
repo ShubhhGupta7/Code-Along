@@ -1,4 +1,4 @@
-<li id=post class="sub-container">    
+<li id="post-<%= post._id%>" class="sub-container">    
     <div class="post-header">
         <div class="post-heading">
             <h4> <%= post.user.name %> 
@@ -8,7 +8,7 @@
             <i class="fas fa-ellipsis-h" id="dropdown-btn" style="font-size: 0.7rem"></i>
             <div class="post-options-dropdown-content" >
                 <% if(locals.user && locals.user.id == post.user.id) { %>
-                    <a href="/posts/destroy/<%=post.id%>">Delete</a>
+                    <a class="delete-post-button" href="/posts/destroy/<%=post.id%>">Delete</a>
                 <% } %>
             </div>
         </div>
@@ -18,8 +18,9 @@
     </h4>
     <p> <%= post.content %> </p>
     <% if(locals.user) { %>  
+        <!-- let's give an id to the new comment form  we'll also need to make the same changed in home_post.js where we're adding a post to the page -->
         <div id='form-container'>
-            <form action="/comments/create" id="comment-form" method="POST">
+            <form action="/comments/create" id="post-<%=post._id%>-comments-form" method="POST">
                 <div>
                     <textarea name="content" id="text-area" cols="20" rows="1" placeholder="Write a comment..." required></textarea>
                 </div>
