@@ -20,7 +20,7 @@
     <% if(locals.user) { %>  
         <!-- let's give an id to the new comment form  we'll also need to make the same changed in home_post.js where we're adding a post to the page -->
         <div id='form-container'>
-            <form action="/comments/create" id="post-<%=post._id%>-comments-form" method="POST">
+            <form action="/comments/create" id="post-<%=post._id%>-comments-form" method="POST" class= "comment-form">
                 <div>
                     <textarea name="content" id="text-area" cols="20" rows="1" placeholder="Write a comment..." required></textarea>
                 </div>

@@ -81,13 +81,13 @@ module.exports.home = async function(req, res) {
     // Defaulty every statement is Async to make it sync pass third argu as true.
 
     try {
-        let posts = await Post.find({}).populate('user').populate({
+        let posts = await Post.find({}).sort('-createdAt').populate('user').populate({
             path: 'comments', 
             populate : {
                 path: 'user'
             }
         });
-    
+        
         let users = await User.find({});
     
         return res.render('home', {

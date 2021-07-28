@@ -5,18 +5,20 @@
 
         newPost.submit(function(event) {
             event.preventDefault();
-
+            
             $.ajax({
                 type: 'post', 
                 url: '/posts/create',
                 data: newPost.serialize(),
 
                 success: function(data) {
-                    let newPost = newPostDom(data.data);
+                    let newPost = newPostDom(data.data.post);
                     $('#post-display-container>ul').prepend(newPost);
-                    deletePost($(' .destroy-post-button', newPost));
+
+                    deletePost($(' .delete-post-button', newPost));
 
                     // call the create comment class
+                    new PostComments(data.data.post._id);
 
                     new Noty({
                         theme: 'relax',
@@ -41,13 +43,13 @@
         <li id="post-${post._id}" class="sub-container">    
         <div class="post-header">
             <div class="post-heading">
-                <h4> ${post.user.name} 
+                <h4> ${post.user.name} </h4>
             </div>
     
             <div class="post-options-dropdown" style="float: right;" >
                 <i class="fas fa-ellipsis-h" id="dropdown-btn" style="font-size: 0.7rem"></i>
                 <div class="post-options-dropdown-content" >
-                    <a id="id="delete-post-button" href="/posts/destroy/<%=post.id%>">Delete</a>
+                    <a class="delete-post-button" href="/posts/destroy/${post._id}">Delete</a>
                 </div>
             </div>
         </div>
@@ -56,7 +58,7 @@
         </h4>
         <p> ${ post.content } </p>
         <div id='form-container'>
-            <form action="/comments/create" id="post-${post._id}-comments-form" method="POST">
+            <form action="/comments/create" id="post-${post._id}-comments-form" method="POST" class="comment-form">
                 <div>
                     <textarea name="content" id="text-area" cols="20" rows="1" placeholder="Write a comment..." required></textarea>
                 </div>
@@ -79,7 +81,7 @@
 
     // method to delete a post from DOM
     let deletePost = function(deleteLink) {
-        deleteLink.click(function(event) {
+        $(deleteLink).click(function(event) {
             event.preventDefault();
 
                 $.ajax({
@@ -87,7 +89,8 @@
                     url: $(deleteLink).prop('href'),
 
                     success: function(data) {
-                        $(`#post-${data.post_id}`).remove();
+                        console.log('success');
+                        $(`#post-${data.data.post_id}`).remove();
                         new Noty({
                             theme: 'relax',
                             text: 'Post Deleted',
@@ -98,7 +101,7 @@
                     },
                     
                     error: function(error) {
-                        console.log(event.responseText);
+                        console.log(error.responseText);
                     }
                 });
         });
@@ -107,7 +110,7 @@
     // Loop over all the existing posts on the page (When the window loads for the first time) and call the delete post method on the delete link of each, and also add AJAX(using the class we've created) to the deleted button of each
 
     let convertPostsToAjax = function() {
-        $('post-list-container>ul>li').each(function() {
+        $('#post-display-container>ul>li').each(function() {
             let self = $(this);
             let deleteButton = $(' .delete-post-button', self);
             deletePost(deleteButton);
