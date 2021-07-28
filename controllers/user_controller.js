@@ -1,4 +1,6 @@
 const User = require('../models/user');
+const fs = require('fs');
+const path = require('path');
 
 // Here there is no need of async await as no function uses nested call backs hence no callback hell present.
 
@@ -13,20 +15,63 @@ module.exports.profile = function(req, res) {
 }
 
 // Update the current loggedin user info
-module.exports.update = function(req, res) {
-    if(req.user.id == req.params.id) {
+module.exports.update = async function(req, res) {
+    // if(req.user.id == req.body.user) {
         
-        // One way to do it
-        // User.findByIdAndUpdate(req.user.id, {name:body.name, email: body.email}, function() {});
+    //     // One way to do it
+    //     // User.findByIdAndUpdate(req.user.id, {name:body.name, email: body.email}, function() {});
     
-        // Second way
-        User.findByIdAndUpdate(req.user.id, req.body, function(err, user) {
-            req.flash('success', 'User info updated!');
+    //     // Second way
+    //     User.findByIdAndUpdate(req.user.id, req.body, function(err, user) {
+
+    //         req.flash('success', 'User info updated!');
+    //         return res.redirect('back');
+    //     });
+    // } else {
+    //     req.flash('error' ,'Not an Anuthorized User');
+    //     return res.status(401).send('Unauthorized');
+    // }
+
+    // Using async await syntax
+    if(req.user.id == req.params.id) {
+        try {
+            let user = await User.findById(req.params.id);
+            // When we are using multipart data then normal parsing can not be used to get data(req.body)
+            // So in this case we use multer to get form data.
+
+            User.uploadedAvatar(req, res, function(err) {
+                if(err) {
+                    console.log('*******multer Error: ', err);
+                }
+
+                user.name = req.body.name;
+                user.email = req.body.email;
+                user.college = req.body.college;
+                user.codechef = req.body.codechef;
+                user.codeforces = req.body.codeforces;
+                
+                if(req.file) {
+                    // this is saving the path of the uploaded file into the avatar field in the user.
+                    if(user.avatar) {
+                        fs.unlinkSync(path.join(__dirname, '..',user.avatar));
+                    }
+                    
+                    user.avatar = User.avatarPath + '/' + req.file.filename;
+                }
+
+                user.save();
+                return res.redirect('back');
+            });
+        } catch(error) {
+            console.log('in catch avatar function');
+            req.flash('Error: ', error);
             return res.redirect('back');
-        });
+        }
+
+
     } else {
-        req.flash('error' ,'Not an Anuthorized User');
-        return res.status(401).send('Unauthorized');
+        req.flash('error', 'unauthenticated');
+        return res.status(401).send('unauthenticated');
     }
 }
 

@@ -36,7 +36,7 @@
         <div id="profile">
             <div id="profile-picture">
                 <h2>Profile</h2>
-                <img src="https://cdn.icon-icons.com/icons2/1812/PNG/512/4213460-account-avatar-head-person-profile-user_115386.png" alt="Profile Picture">
+                <img src="<%= profile_user.avatar %>" alt="Profile Picture">
             </div>
     
             <div id="about">
@@ -72,7 +72,9 @@
                 <h1>Update</h1>
             </div>
 
-            <form action="/users/update/<%= profile_user.id%>" method="POST">
+            <form action="/users/update/<%= profile_user.id%>" method="POST" id="update-form" enctype="multipart/form-data">
+                <input type="file" name="avatar" placeholder="Upload Profile Picture">
+                
                 <input type="text" name="name" placeholder="Your username" value="<%= profile_user.name%>" required>
 
                 <input type="email" name="email" placeholder="Your email" value="<%= profile_user.email%>" required>
@@ -82,12 +84,12 @@
                 <input type="number" name="codechef" placeholder="Your codechef rating" value="<%= profile_user.codechef%>" >
                 <input type="text" name="codeforces" placeholder="Your codeforces rating" value="<%= profile_user.codeforces%>" >
                 <input name="about" placeholder="About" value="<%= profile_user.about%>">
+                
                 <input id="btn" type="submit" value="Update">
             </form>
         <% } %>
         </section>
-    
-    
+
 </main>
 
 

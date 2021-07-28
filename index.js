@@ -30,6 +30,9 @@ app.use(cookieParser());
 // using Static files.
 app.use(express.static('./asserts'));
 
+// make the uploads path avaliable to the browser
+app.use('/uploads', express.static(__dirname + '/uploads'));
+
 // Using layouts with partials
 app.use(expressLayouts);
 
