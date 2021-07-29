@@ -81,3 +81,38 @@ main .sign-in-container .btn input {
   font-weight: bolder;
   padding: .5rem 9.5rem;
 }
+
+main #social-authentication-container {
+  display: flex;
+  flex-direction: wrap;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  width: 100%;
+  box-sizing: border-box;
+  height: 100px;
+}
+
+main #social-authentication-container a {
+  text-decoration: none;
+  color: blue;
+}
+
+main #social-authentication-container a button {
+  border: none;
+  box-shadow: 1px 1px 6px 0.1px #282929;
+  box-sizing: border-box;
+  height: 40px;
+  width: 200px;
+  margin: 10px;
+  font-size: 1rem;
+  font-weight: lighter;
+  background-color: #073b4c;
+  color: white;
+}
+
+main #social-authentication-container a button:hover {
+  transition: all 1s;
+  background-color: black;
+  color: whitesmoke;
+  font-weight: normal;
+}
