@@ -1,3 +1,5 @@
+//  Nodejs runs on a single main thread on the system and runs multiples processes parallely.
+
 const express = require('express');
 const app = express();
 const cookieParser = require('cookie-parser');
