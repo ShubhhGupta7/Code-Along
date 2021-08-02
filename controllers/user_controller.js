@@ -1,6 +1,13 @@
 const User = require('../models/user');
 const fs = require('fs');
 const path = require('path');
+const crypto = require('crypto');
+const ResetPasswordToken = require('../models/resetPasswordToken');
+
+const resetMailer  = require('../mailers/reset_password_mailer');
+
+const queue = require('../config/kue');
+const resetEmailWorker = require('../workers/reset_password_queue_worker.js');
 
 // Here there is no need of async await as no function uses nested call backs hence no callback hell present.
 
@@ -142,4 +149,81 @@ module.exports.destroySession = function(req, res) {
     req.flash('success', 'You have logout!');
 
     return res.redirect('/');
+}
+
+// redirect to reset password page
+module.exports.resetPasswordForm = async function(req, res) {
+    let user = await User.findOne({email: req.body.email});
+    
+    if(user) {
+        let token = await ResetPasswordToken.create({
+            user: user._id,
+            accessToken:  crypto.randomBytes(20).toString('hex'),
+            isValid: 'true'
+        });
+
+        token = await token.populate('user').execPopulate();
+        console.log(token);
+
+        let job = queue.create('emails', token).save(function(err) {
+            if(err) {
+                console.log('Error in sending to the queue: ', err);   
+                return;
+            }
+
+            console.log('Jon enquened',job.id);
+            return;
+        });
+        req.flash('success', 'Password reset mail has beem deliverd!')
+
+        return res.redirect('back');
+    }
+    
+    else {
+        req.flash('error', 'No user present with this email!')
+        return res.redirect('back');
+    }
+}
+
+module.exports.changePasswordRedirect = async function(req, res) {
+    console.log('Token in params of redirect link' ,req.params.accessToken);
+
+    return res.render('change_password', {
+        title: 'Codeial | Reset Password',
+        accessToken: req.params.accessToken
+    });
+}
+
+// check the password and change the password
+module.exports.changePassword = async function(req, res) {
+  
+    
+    if(req.body.password == req.body.confirm_password) {
+        console.log('body of change password access token', req.body.accessToken);
+        let tokens = req.body.accessToken.toString();
+        let token = await ResetPasswordToken.findOne({accessToken: tokens}).exec();
+        console.log('Token rest wala' ,token);
+
+        let user = await User.findByIdAndUpdate(token.user, {
+            password: req.body.password
+        });
+        console.log('user token ka', user);
+
+        req.body.token.isValid = false;
+        req.falsh('success', 'Password updated successfully!');
+        return res.render('user_sign_in' ,{
+            title: 'Codeial | Sign-In'
+        })
+    }
+
+    req.flash('error', "Passwors does'nt Match!");
+    return res.redirect('back');
+}
+
+// create a token to change password
+module.exports.resetPassword = async function(req, res) {
+    return res.render('reset_password', {
+        title: 'Reset password'
+    });
+    
 }

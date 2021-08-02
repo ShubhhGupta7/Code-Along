@@ -26,4 +26,11 @@ router.post('/create-session', passport.authenticate(
     {failureRedirect : '/users/sign-in'}
 ), userController.createSession);
 
+// forget password
+router.get('/reset-password', userController.resetPassword);
+router.post('/reset-password', userController.resetPasswordForm);
+
+router.get('/change-password/:accessToken', userController.changePasswordRedirect);
+router.post('/update-password', userController.changePassword);
+
 module.exports = router;
