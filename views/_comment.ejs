@@ -1,7 +1,7 @@
 <li id="comment-<%= comment._id%>" class="comment">
         <div class="comment-header">
             <div class="comment-heading">
-                <h4> <%= comment.user.name %> 
+                <h4> <%= comment.user.name %> </h4>
             </div>
     
             <div class="comment-options-dropdown" style="float: right;" >
@@ -14,4 +14,19 @@
             </div>
         </div>
     <p> <%= comment.content %></p>
+
+    <div class="action-bar">
+        <div class="action-container">      
+                <div class = "actions">
+                    <% if(locals.user) { %> 
+                        <div><a class="toggle-like-button" data-likes="<%= post.likes.length%>" href="/likes/toggle/?id=<%=post._id%>&type=Post"> <i class="far fa-heart">
+                            <span> <p style="display: inline-block;"> <%= post.likes.length %> likes</p></span>
+                        </i></a> </div>
+                    
+                     <% } else { %>
+                        <p style="display: inline-block;"> <%= post.likes.length %> likes</p></span>
+                    <% } %>
+                </div>
+        </div>
+    </div>
 </li>

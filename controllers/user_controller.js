@@ -7,7 +7,7 @@ const ResetPasswordToken = require('../models/resetPasswordToken');
 const resetMailer  = require('../mailers/reset_password_mailer');
 
 const queue = require('../config/kue');
-const resetEmailWorker = require('../workers/reset_password_queue_worker.js');
+const resetEmailWorker = require('../workers/reset_password_email_worker.js');
 
 // Here there is no need of async await as no function uses nested call backs hence no callback hell present.
 
@@ -199,17 +199,23 @@ module.exports.changePassword = async function(req, res) {
   
     
     if(req.body.password == req.body.confirm_password) {
-        console.log('body of change password access token', req.body.accessToken);
-        let tokens = req.body.accessToken.toString();
-        let token = await ResetPasswordToken.findOne({accessToken: tokens}).exec();
-        console.log('Token rest wala' ,token);
+        let accessToken = req.body.accessToken;
+        console.log('body of change password access token', accessToken);
+
+        let token = await ResetPasswordToken.findOne({accessToken: accessToken}, function(err, t) {
+            console.log('Token getted from the accessToken' ,t);
+        });
+
+        console.log('Token getted from the accessToken' ,token);
 
         let user = await User.findByIdAndUpdate(token.user, {
             password: req.body.password
         });
-        console.log('user token ka', user);
+        console.log('user for the reset token', user);
 
-        req.body.token.isValid = false;
+        token.isValid = false;
+        token.save();
+
         req.falsh('success', 'Password updated successfully!');
         return res.render('user_sign_in' ,{
             title: 'Codeial | Sign-In'

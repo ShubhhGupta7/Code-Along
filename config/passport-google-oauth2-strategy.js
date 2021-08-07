@@ -33,7 +33,7 @@ function(accessToken, refreshToken, profile, done) {
             User.create({
                 name: profile.displayName,
                 email: profile.emails[0].value,
-                passpord: crypto.randomBytes(20).toString('hex')
+                password: crypto.randomBytes(20).toString('hex')
             }, function(err, user) {
                 if(err) {
                     console.log('Error in creating user in google-passport-strategy: ', err);

@@ -36,7 +36,11 @@
         <div id="profile">
             <div id="profile-picture">
                 <h2>Profile</h2>
-                <img src="<%= profile_user.avatar %>" alt="Profile Picture">
+                <% if( profile_user.avatar ) { %>
+                    <img src="<%= user.avatar%>" alt="pp">
+                <% } else {%>
+                    <img src="https://www.kindpng.com/picc/m/78-786207_user-avatar-png-user-avatar-icon-png-transparent.png" alt="avatar">
+                <% } %>
             </div>
     
             <div id="about">
@@ -65,31 +69,41 @@
         
     </section>
 
-    <section id="profile-edit-container">
-        <% if(profile_user.id == user.id) { %> 
-            <!-- If the user profile matches with the logged in user than show the edit form -->
-            <div id="edit-section-heading">
-                <h1>Update</h1>
-            </div>
+    <% if(profile_user.id == user.id) { %>
+        <section id="profile-edit-container">
+            
+                <!-- If the user profile matches with the logged in user than show the edit form -->
+                <div id="edit-section-heading">
+                    <h1>Update</h1>
+                </div>
 
-            <form action="/users/update/<%= profile_user.id%>" method="POST" id="update-form" enctype="multipart/form-data">
-                <input type="file" name="avatar" placeholder="Upload Profile Picture">
-                
-                <input type="text" name="name" placeholder="Your username" value="<%= profile_user.name%>" required>
+                <form action="/users/update/<%= profile_user.id%>" method="POST" id="update-form" enctype="multipart/form-data">
+                    <input type="file" name="avatar" placeholder="Upload Profile Picture">
+                    
+                    <input type="text" name="name" placeholder="Your username" value="<%= profile_user.name%>" required>
 
-                <input type="email" name="email" placeholder="Your email" value="<%= profile_user.email%>" required>
+                    <input type="email" name="email" placeholder="Your email" value="<%= profile_user.email%>" required>
+                    
+                    <input type="text" name="college" placeholder="Your college" value="<%= profile_user.college%>" >
+                    
+                    <input type="number" name="codechef" placeholder="Your codechef rating" value="<%= profile_user.codechef%>" >
+                    <input type="text" name="codeforces" placeholder="Your codeforces rating" value="<%= profile_user.codeforces%>" >
+                    <input name="about" placeholder="About" value="<%= profile_user.about%>">
+                    
+                    <input id="btn" type="submit" value="Update">
+                </form>
+            
                 
-                <input type="text" name="college" placeholder="Your college" value="<%= profile_user.college%>" >
-                
-                <input type="number" name="codechef" placeholder="Your codechef rating" value="<%= profile_user.codechef%>" >
-                <input type="text" name="codeforces" placeholder="Your codeforces rating" value="<%= profile_user.codeforces%>" >
-                <input name="about" placeholder="About" value="<%= profile_user.about%>">
-                
-                <input id="btn" type="submit" value="Update">
-            </form>
+            </section>
+        <% } else { %>
+            <a id="toggle-friendship" href="/friendship/toggle/<%= profile_user._id%>">
+                <button id="add-friend" class="friendship-toggle-button">
+                    Add
+                </button>
+            </a>
         <% } %>
-        </section>
 
+        <script src="/js/toggle_friendship.js"></script>
 </main>
 
 

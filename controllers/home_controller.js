@@ -1,3 +1,4 @@
+const Friendship = require('../models/friendship');
 const Post = require('../models/post');
 const User = require('../models/user');
 
@@ -81,19 +82,45 @@ module.exports.home = async function(req, res) {
     // Defaulty every statement is Async to make it sync pass third argu as true.
 
     try {
-        let posts = await Post.find({}).sort('-createdAt').populate('user').populate({
-            path: 'comments', 
+        let posts = await Post.find({}).sort('-createdAt')
+        .populate('user').populate('likes').populate('comments')
+        .populate({
+            path: 'comments',
+            populate: {
+                path: 'likes'
+            }, 
             populate : {
                 path: 'user'
-            }
+            } 
         });
         
         let users = await User.find({});
+        let friends = [];
+        
+       if(req.user) {
+            let logedInUser = await User.findById(req.user._id).populate({
+                path: 'friendships',
+                populate: {
+                    path: 'from_user to_user'
+                }
+            }); 
+            // This is the syntax to populate the fields on the same level by space seperating the keys in the path 
+
+        
+            for(let i = 0; i < logedInUser.friendships.length; i++) {
+                if(logedInUser.friendships[i].to_user.id != req.user.id) {
+                    friends[i] = logedInUser.friendships[i].to_user;
+                } else {
+                    friends[i] = logedInUser.friendships[i].from_user;
+                }
+            }
+       }
     
         return res.render('home', {
             title : "Codeial | Home",
             post_list : posts,
-            all_users: users
+            all_users: users,
+            friend_list: friends
         });
     } catch(err) {
         console.log('Error', err);

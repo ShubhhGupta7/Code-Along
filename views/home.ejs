@@ -4,21 +4,67 @@
 <link rel="stylesheet" href="/css/home_layout.css">
 
 <main>
+    <% if(locals.user) { %>
+        <section id="friend-chat-container">
+            
+                <div class="sub-container">
+                    <h4 style="color: black;">Friends</h4>
+                    <ul>
+                        <% for(friend of friend_list) { %>
+                            <li>
+                                <p> 
+                                    <span>
+                                        <% if( friend.avatar ) { %>
+                                            <img src="<%= friend.avatar%>" alt="pp">
+                                        <% } else {%>
+                                            <img src="https://www.kindpng.com/picc/m/78-786207_user-avatar-png-user-avatar-icon-png-transparent.png" alt="avatar">
+                                        <% } %>
+                                        <a href="/users/profile/<%=friend.id%>"><%=friend.name%></a>    
+                                        </span>
+                                    <span>
+                                        <a id="toggle-friendship" href="/friendship/toggle/<%= friend._id%>">
+                                            <button id="remove-friend" class="friendship-toggle-button">
+                                                Remove
+                                            </button>
+                                        </a>
+                                    </span>
+                                </p>
+                            </li>
+                        <% } %>        
+                    </ul>
+                </div>
 
-    <section id="friend-chat-container">
-        <div class="sub-container">
-            <h4 style="color: black;">Users</h4>
-            <ul>
-                <% for(friend of all_users) { %> 
-                    <li>
-                        <p>
-                            <a href="/users/profile/<%=friend.id%>"><%=friend.name%></a>
-                        </p>
-                    </li>
-                <% } %>        
-            </ul>
-        </div>
-    </section>
+            <div class="sub-container">
+                <h4 style="color: black;">Users</h4>
+                <ul>
+                    <% for(profile_user of all_users) { %> 
+                        <% if(profile_user.id != locals.user.id) { %>
+                            <li>
+                                <p> 
+                                    <span>
+                                        <% if( profile_user.avatar ) { %>
+                                            <img src="<%= profile_user.avatar%>" alt="pp">
+                                        <% } else {%>
+                                            <img src="https://www.kindpng.com/picc/m/78-786207_user-avatar-png-user-avatar-icon-png-transparent.png" alt="avatar">
+                                        <% } %>
+                                        <a href="/users/profile/<%=profile_user.id%>"><%=profile_user.name%></a>
+                                    </span>
+
+                                    <span>
+                                        <a id="toggle-friendship" href="/friendship/toggle/<%= profile_user._id%>">
+                                            <button id="add-friend" class="friendship-toggle-button">
+                                                Add
+                                            </button>
+                                        </a>
+                                    </span>
+                                </p>
+                            </li>
+                        <% } %>
+                    <% } %>        
+                </ul>
+            </div>
+        </section>
+    <% } %>
 
     <section id="feed-post">
         <%if(locals.user) { %>
@@ -45,5 +91,16 @@
     
     <script src="/js/home_post_comments.js"></script>
     <script src="/js/home_posts.js"></script>
+
+     <!-- import the script file for toggle likes, also run it over for the already present posts and comments on the page  -->
+    <script src="/js/toggle_likes.js"></script>
+    <script>
+        $(' .toggle-like-button').each(function() {
+            let self = this;
+            let toggleLike = new ToggleLike(self);
+        })
+    </script>
+
+    <script src="/js/toggle_friendship.js"></script>
 </main>
                     

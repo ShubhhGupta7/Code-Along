@@ -4,7 +4,7 @@
 
 header {
     font-family: Quicksand;
-    height: 7vh;
+    height: 50px;
     background-color: white;
     border-bottom: 1px solid lightgrey;
     display: flex;
@@ -26,16 +26,32 @@ header {
         padding: 0;
         ul {
             list-style: none;
+            margin-right: 7rem;
             li {
                 display: inline-block;
-                margin-right: 2rem;
+                margin-left: 1rem;
                 a {
                     text-decoration: none;
                     color : black;
                     font-size: 1.2rem;
+                    
+                    img {
+                        box-sizing: border-box;
+                        height: 25px;
+                        width: 25px;
+                        border-radius: 50%;
+                        border: none;
+                        vertical-align: top;
+
+                        &:hover {
+                            transition: border 0.5s;
+                            border: .5px solid dodgerblue;
+                        }
+
+                    }
 
                     &:hover {
-                        transition: all 1s;
+                        transition: all .5s;
                         color: dodgerblue;
                         font-size: 1.22rem;
                     }

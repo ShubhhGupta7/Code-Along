@@ -38,6 +38,7 @@ class PostComments {
                     $(`#post-comments-${postId}`).prepend(newComment);
                     pSelf.deleteComment($(' .delete-comment-button', newComment));
 
+                    new ToggleLike($(' .toggle-like-button', newComment));
                     new Noty({
                         theme: 'relax',
                         text: 'Comment published!',
@@ -70,6 +71,16 @@ class PostComments {
                     </div>
                 </div>
                 <p> ${comment.content } </p>
+
+                <div class="action-bar">
+                    <div class="action-container">      
+                        <div class = "actions">
+                            <div><a class="toggle-like-button" data-likes="0" href="/likes/toggle/?id=${comment._id}&type=Comment"> <i class="far fa-heart">
+                                <span> <p style="display: inline-block;"> 0 likes</p></span>
+                            </i></a> </div>
+                        </div>
+                    </div>
+                </div>
             </li>
         `);
     }
@@ -82,7 +93,9 @@ class PostComments {
                 type: 'get',
                 url: $(deleteLink).prop('href'),
 
+
                 success: function(data) {
+                    console.log(data.data);
                     $(`#comment-${data.data.comment_id}`).remove();
 
                     new Noty({

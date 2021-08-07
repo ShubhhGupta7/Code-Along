@@ -26,9 +26,6 @@ body {
             }
         }
         
-        #navigation-search-container {
-            width: 20vw;
-        }
     
         #feed-post {
             width: 57vw;
@@ -175,12 +172,38 @@ body {
                         }
                     }
                 }
-            }            
+            }
+            
+            .action-bar {
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                
+                .action-container {
+                    font-size: 1.5rem;
+                    width: 96%;
+                    
+                    .actions div {
+                        margin: 0.1rem;
+                        display: inline-block;
+                        a { 
+                            text-decoration: none;
+                            color: black;
+                            p { 
+                                display: inline-block;
+                                font-family: Quicksand;
+                                color: grey;
+                                font-weight: bold;
+                            }
+                        }
+                    }
+                }
+            }
         }
     
         #friend-chat-container {
-            width: 20vw;
-            min-width: 250px;
+            width: 25vw;
+            min-width: 400px;
             
             .sub-container {
                 margin: 0;
@@ -197,6 +220,18 @@ body {
                 li {
                     p {
                         margin: 1.5rem 0;
+                        display: flex;
+                        flex-direction: row;
+                        flex-wrap: nowrap;
+                        justify-content: space-between;
+                        img{
+                            height: 40px;
+                            width: 40px;
+                            border-radius: 50%;
+                            margin-right: 10px;
+                            box-shadow: 0px 1px 2px 1px black;
+                            vertical-align: middle;
+                        }
                         a {
                             color: grey;
                             text-decoration: none;
@@ -205,6 +240,49 @@ body {
                                 transition: all 0.5s;
                                 color: black;
                             }
+                        }
+
+                        #add-friend {
+                            box-sizing: border-box;
+                            font-family: Quicksand;
+                            font-size: 1rem;
+                            
+                            border: none;
+                            font-weight: bold;
+                            background-color: dodgerblue;
+                            color: white;
+                            
+                
+                            &:hover {
+                                transition: all 0.5s;
+                                background-color: rgb(15, 88, 161);
+                                color: whitesmoke;
+                            }
+                        }
+                
+                        #remove-friend {
+                            box-sizing: border-box;
+                            font-family: Quicksand;
+                            font-size: 1rem;
+                            
+                            border: none;
+                            font-weight: bold;
+                            padding: 0.3rem 1rem;
+                            color: black;
+                            background-color: whitesmoke;
+                
+                            
+                
+                            &:hover {
+                                transition: all 0.5s;
+                                background-color: rgb(15, 88, 161);
+                                color: whitesmoke;
+                                background-color: black;
+                            }
+                        }
+
+                        .friendship-toggle-button {
+                            margin-top: 7px;
                         }
                     }
                 }

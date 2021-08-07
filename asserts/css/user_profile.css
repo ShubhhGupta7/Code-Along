@@ -122,3 +122,43 @@ body main #profile-edit-container #btn:hover {
   background-color: rgba(12, 117, 223, 0.884);
   color: whitesmoke;
 }
+
+body main #add-friend {
+  box-sizing: border-box;
+  font-family: Quicksand;
+  font-size: 1.5rem;
+  margin: 3rem;
+  border: none;
+  font-weight: bold;
+  background-color: dodgerblue;
+  color: white;
+  height: 50px;
+  width: 150px;
+}
+
+body main #add-friend:hover {
+  transition: all 0.5s;
+  background-color: #0f58a1;
+  color: whitesmoke;
+}
+
+body main #remove-friend {
+  box-sizing: border-box;
+  font-family: Quicksand;
+  font-size: 1.5rem;
+  margin: 3rem;
+  border: none;
+  font-weight: bold;
+  padding: 0.3rem 1rem;
+  color: black;
+  background-color: whitesmoke;
+  height: 50px;
+  width: 150px;
+}
+
+body main #remove-friend:hover {
+  transition: all 0.5s;
+  background-color: #0f58a1;
+  color: whitesmoke;
+  background-color: black;
+}

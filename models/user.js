@@ -2,6 +2,7 @@ const mongoose = require('mongoose');
 
 const multer = require('multer');
 const path = require('path');
+const Friendship = require('./friendship');
 
 const AVATAR_PATH =  path.join('/uploads/users/avatars');
 
@@ -30,7 +31,13 @@ const userSchema = new mongoose.Schema({
     },
     about : {
         type: String
-    }, 
+    },
+    friendships:[
+        {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: 'Friendship'
+        }
+    ], 
     avatar: {
         type: String
     }

@@ -19,24 +19,48 @@
                             </a>
                         </li>
                         <li>
-                            <a href="/users/Profile/<%= user.id%>">
-                                <%= user.name %>
+                            <a href="/">
+                                <i class="fas fa-comment-dots" style="font-size: 1.5rem;"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/">
+                                <i class="fas fa-bell" style="font-size: 1.5rem;"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/">
+                                <i class="fas fa-file-upload" style="font-size: 1.5rem;"></i>
                             </a>
                         </li>
                         <li>
                             <a href="/users/sign-out">
-                                Sign Out
+                                <i class="fas fa-sign-out-alt"  style="font-size: 1.5rem;"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/users/Profile/<%= user.id%>">
+                                <% if( user.avatar ) { %>
+                                    <img src="<%= user.avatar%>" alt="pp">
+                                <% } else {%>
+                                    <img src="https://www.kindpng.com/picc/m/78-786207_user-avatar-png-user-avatar-icon-png-transparent.png" alt="avatar">
+                                <% } %>
                             </a>
                         </li>
                 <% } else { %> 
                         <li>
+                            <a href="/">
+                                <i class="fas fa-home" style="font-size: 1.5rem;"></i>
+                            </a>
+                        </li>
+                        <li>
                             <a href="/users/sign-in">
-                                Sign In
+                                <i class="fas fa-sign-in-alt"  style="font-size: 1.5rem;"></i>
                             </a>
                         </li>
                         <li>
                             <a href="/users/sign-up">
-                                Sign Up
+                                <i class="fas fa-user-plus"  style="font-size: 1.5rem;"></i>
                             </a>
                         </li>
                 <% } %>

@@ -31,10 +31,6 @@ body main section .sub-container {
   border-bottom: 1px solid lightgrey;
 }
 
-body main #navigation-search-container {
-  width: 20vw;
-}
-
 body main #feed-post {
   width: 57vw;
   min-width: 350px;
@@ -187,9 +183,37 @@ body main #feed-post .post-header .post-options-dropdown .post-options-dropdown-
   background-color: whitesmoke;
 }
 
+body main #feed-post .action-bar {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+body main #feed-post .action-bar .action-container {
+  font-size: 1.5rem;
+  width: 96%;
+}
+
+body main #feed-post .action-bar .action-container .actions div {
+  margin: 0.1rem;
+  display: inline-block;
+}
+
+body main #feed-post .action-bar .action-container .actions div a {
+  text-decoration: none;
+  color: black;
+}
+
+body main #feed-post .action-bar .action-container .actions div a p {
+  display: inline-block;
+  font-family: Quicksand;
+  color: grey;
+  font-weight: bold;
+}
+
 body main #friend-chat-container {
-  width: 20vw;
-  min-width: 250px;
+  width: 25vw;
+  min-width: 400px;
 }
 
 body main #friend-chat-container .sub-container {
@@ -209,6 +233,19 @@ body main #friend-chat-container ul {
 
 body main #friend-chat-container ul li p {
   margin: 1.5rem 0;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+}
+
+body main #friend-chat-container ul li p img {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  margin-right: 10px;
+  box-shadow: 0px 1px 2px 1px black;
+  vertical-align: middle;
 }
 
 body main #friend-chat-container ul li p a {
@@ -219,4 +256,42 @@ body main #friend-chat-container ul li p a {
 body main #friend-chat-container ul li p a:hover {
   transition: all 0.5s;
   color: black;
+}
+
+body main #friend-chat-container ul li p #add-friend {
+  box-sizing: border-box;
+  font-family: Quicksand;
+  font-size: 1rem;
+  border: none;
+  font-weight: bold;
+  background-color: dodgerblue;
+  color: white;
+}
+
+body main #friend-chat-container ul li p #add-friend:hover {
+  transition: all 0.5s;
+  background-color: #0f58a1;
+  color: whitesmoke;
+}
+
+body main #friend-chat-container ul li p #remove-friend {
+  box-sizing: border-box;
+  font-family: Quicksand;
+  font-size: 1rem;
+  border: none;
+  font-weight: bold;
+  padding: 0.3rem 1rem;
+  color: black;
+  background-color: whitesmoke;
+}
+
+body main #friend-chat-container ul li p #remove-friend:hover {
+  transition: all 0.5s;
+  background-color: #0f58a1;
+  color: whitesmoke;
+  background-color: black;
+}
+
+body main #friend-chat-container ul li p .friendship-toggle-button {
+  margin-top: 7px;
 }

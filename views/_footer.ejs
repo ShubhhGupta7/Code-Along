@@ -26,9 +26,20 @@
                     <li>
                         <a href="/">Home</a>
                     </li>
-                    <li>
-                        <a href="/users/profile">Profile</a>
-                    </li>
+                    <% if(locals.user) { %>
+                        <li>
+                            <a href="/users/profile">Profile</a>
+                        </li>
+                        <li>
+                            <a href="/">Chat</a>
+                        </li>
+                        <li>
+                            <a href="/">My Posts</a>
+                        </li>
+                        <li>
+                            <a href="/">Notification</a>
+                        </li>
+                    <% } %>
                 </ul>
             </nav>
         </div>

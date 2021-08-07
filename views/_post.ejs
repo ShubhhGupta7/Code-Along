@@ -32,13 +32,28 @@
         </div> 
     <% } %>
 
-        <h4>Comments</h4>
-        <div id="comments-display-container">
-            <ul id="post-comments-<%=post._id%>">
-                <% for(comment of post.comments) { %>
-                    <%- include('_comment') -%>
-                <% } %>
-            </ul>
+    <div class="action-bar">
+        <div class="action-container">      
+                <div class = "actions">
+                    <% if(locals.user) { %> 
+                        <div><a class="toggle-like-button" data-likes="<%= post.likes.length%>" href="/likes/toggle/?id=<%=post._id%>&type=Post"> <i class="far fa-heart">
+                            <span> <p style="display: inline-block;"> <%= post.likes.length %> likes</p></span>
+                        </i></a> </div>
+                    
+                     <% } else { %>
+                        <p style="display: inline-block;"> <%= post.likes.length %> likes</p></span>
+                    <% } %>
+                </div>
         </div>
+    </div>
+
+    <h4>Comments</h4>
+    <div id="comments-display-container">
+        <ul id="post-comments-<%=post._id%>">
+            <% for(comment of post.comments) { %>
+                <%- include('_comment') -%>
+            <% } %>
+        </ul>
+    </div>
 
 </li>

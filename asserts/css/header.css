@@ -4,7 +4,7 @@
 
 header {
   font-family: Quicksand;
-  height: 7vh;
+  height: 50px;
   background-color: white;
   border-bottom: 1px solid lightgrey;
   display: flex;
@@ -27,11 +27,12 @@ header .horizontal-list {
 
 header .horizontal-list ul {
   list-style: none;
+  margin-right: 7rem;
 }
 
 header .horizontal-list ul li {
   display: inline-block;
-  margin-right: 2rem;
+  margin-left: 1rem;
 }
 
 header .horizontal-list ul li a {
@@ -40,8 +41,22 @@ header .horizontal-list ul li a {
   font-size: 1.2rem;
 }
 
+header .horizontal-list ul li a img {
+  box-sizing: border-box;
+  height: 25px;
+  width: 25px;
+  border-radius: 50%;
+  border: none;
+  vertical-align: top;
+}
+
+header .horizontal-list ul li a img:hover {
+  transition: border 0.5s;
+  border: .5px solid dodgerblue;
+}
+
 header .horizontal-list ul li a:hover {
-  transition: all 1s;
+  transition: all .5s;
   color: dodgerblue;
   font-size: 1.22rem;
 }
