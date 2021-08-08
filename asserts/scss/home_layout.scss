@@ -251,7 +251,9 @@ body {
                             font-weight: bold;
                             background-color: dodgerblue;
                             color: white;
-                            
+                            margin-top: 7px;
+                            height: 30px;
+                            width: 100px;
                 
                             &:hover {
                                 transition: all 0.5s;
@@ -270,7 +272,9 @@ body {
                             padding: 0.3rem 1rem;
                             color: black;
                             background-color: whitesmoke;
-                
+                            margin-top: 7px;
+                            height: 30px;
+                            width: 100px;
                             
                 
                             &:hover {
@@ -281,9 +285,6 @@ body {
                             }
                         }
 
-                        .friendship-toggle-button {
-                            margin-top: 7px;
-                        }
                     }
                 }
             }

@@ -1,0 +1,124 @@
+body {
+  font-family: Quicksand;
+  font-weight: bold;
+}
+
+body main {
+  font-family: Quicksand;
+  font-weight: bold;
+}
+
+body main #chat-engine {
+  margin: 2rem auto;
+  height: 80%;
+  width: 70%;
+  border-radius: 0.8rem 0.8rem 0rem  0rem;
+  border: 1px solid black;
+  min-width: 600px;
+  box-shadow: 2px 2px 5px 1px grey;
+}
+
+body main #chat-engine #header {
+  border-radius: 0.8rem 0.8rem 0rem 0rem;
+  height: 10%;
+  background-color: black;
+  color: white;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+body main #chat-engine #header span {
+  font-size: 1.3rem;
+  margin: 0px 30px;
+}
+
+body main #chat-engine #main {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-evenly;
+  height: 90%;
+}
+
+body main #chat-engine #main #chats-list {
+  width: 35%;
+  overflow-y: scroll;
+  background-color: lightgrey;
+  height: 100%;
+}
+
+body main #chat-engine #main #chat-box {
+  width: 65%;
+  background-color: whitesmoke;
+}
+
+body main #chat-engine #main #chat-box #chat-interface {
+  overflow-y: scroll;
+  height: 80%;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: flex-end;
+}
+
+body main #chat-engine #main #chat-box #chat-interface p {
+  padding: 10px;
+  border-radius: 0.4rem;
+  color: white;
+  display: block;
+  max-width: 80%;
+  margin: 1% 3%;
+}
+
+body main #chat-engine #main #chat-box #chat-interface .user-message {
+  background-color: #118ab2;
+  align-self: flex-end;
+}
+
+body main #chat-engine #main #chat-box #chat-interface .friend-message {
+  background-color: #e86363;
+  align-self: flex-start;
+}
+
+body main #chat-engine #main #chat-box #chat-form-container {
+  height: 20%;
+}
+
+body main #chat-engine #main #chat-box #chat-form-container form {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+body main #chat-engine #main #chat-box #chat-form-container form textarea {
+  margin: 1%;
+  border: none;
+  background-color: silver;
+  border-radius: 0.4rem;
+  box-sizing: border-box;
+  padding: .5rem;
+  font-family: Quicksand;
+  font-weight: bold;
+  font-size: 1.1rem;
+  color: black;
+}
+
+body main #chat-engine #main #chat-box #chat-form-container form textarea:focus {
+  outline: none;
+}
+
+body main #chat-engine #main #chat-box #chat-form-container form button {
+  border: none;
+  background-color: none;
+  font-size: 2rem;
+  color: slateblue;
+}
+
+body main #chat-engine #main #chat-box #chat-form-container form button:hover {
+  transition: all 0.5s;
+  color: #c40f4b;
+}

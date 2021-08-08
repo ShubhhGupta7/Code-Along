@@ -266,6 +266,9 @@ body main #friend-chat-container ul li p #add-friend {
   font-weight: bold;
   background-color: dodgerblue;
   color: white;
+  margin-top: 7px;
+  height: 30px;
+  width: 100px;
 }
 
 body main #friend-chat-container ul li p #add-friend:hover {
@@ -283,6 +286,9 @@ body main #friend-chat-container ul li p #remove-friend {
   padding: 0.3rem 1rem;
   color: black;
   background-color: whitesmoke;
+  margin-top: 7px;
+  height: 30px;
+  width: 100px;
 }
 
 body main #friend-chat-container ul li p #remove-friend:hover {
@@ -290,8 +296,4 @@ body main #friend-chat-container ul li p #remove-friend:hover {
   background-color: #0f58a1;
   color: whitesmoke;
   background-color: black;
-}
-
-body main #friend-chat-container ul li p .friendship-toggle-button {
-  margin-top: 7px;
 }

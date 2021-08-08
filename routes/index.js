@@ -13,6 +13,7 @@ router.use('/posts', require('./post'));
 router.use('/comments', require('./comments'));
 router.use('/likes', require('./like'));
 router.use('/friendship', require('./friendship'));
+router.use('/chat-engine', require('./chat'));
 
 router.use('/api', require('./api'));
 
