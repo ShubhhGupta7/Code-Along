@@ -199,14 +199,21 @@ module.exports.changePassword = async function(req, res) {
   
     
     if(req.body.password == req.body.confirm_password) {
-        let accessToken = req.body.accessToken;
-        console.log('body of change password access token', accessToken);
+        let receivedaccessToken = req.body.accessToken;
+        console.log('body of change password access token', receivedaccessToken);
 
-        let token = await ResetPasswordToken.findOne({accessToken: accessToken}, function(err, t) {
-            console.log('Token getted from the accessToken' ,t);
+        let token = await ResetPasswordToken.findOne({
+            accessToken: receivedaccessToken
         });
 
         console.log('Token getted from the accessToken' ,token);
+
+        if(!token.isValid) {
+            req.flash('error', 'OOps!, access token expired');
+            return res.render('user_sign_in' ,{
+                title: 'Codeial | Sign-In'
+            });
+        }
 
         let user = await User.findByIdAndUpdate(token.user, {
             password: req.body.password
@@ -216,7 +223,7 @@ module.exports.changePassword = async function(req, res) {
         token.isValid = false;
         token.save();
 
-        req.falsh('success', 'Password updated successfully!');
+        req.flash('success', 'Password updated successfully!');
         return res.render('user_sign_in' ,{
             title: 'Codeial | Sign-In'
         })

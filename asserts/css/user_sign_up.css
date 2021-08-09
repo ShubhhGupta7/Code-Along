@@ -21,7 +21,7 @@ main #description {
 }
 
 main #description #logo-container {
-  margin-top: 3rem;
+  margin-top: -3rem;
   font-size: 5rem;
   font-family: fangsong;
   font-weight: lighter;

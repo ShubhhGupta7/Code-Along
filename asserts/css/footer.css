@@ -2,6 +2,7 @@ footer {
   box-sizing: border-box;
   width: 100vw;
   border-top: 1px solid lightgrey;
+  background-color: white;
 }
 
 footer .footer-main-container {

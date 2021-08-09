@@ -27,7 +27,7 @@ body {
                 align-items: center;
                 span {
                     font-size: 1.3rem;
-                    margin: 0px 30px;
+                    margin: 0px 2.5vw;
                 }
             }
     
@@ -47,70 +47,78 @@ body {
                 #chat-box {
                     width: 65%;
                     background-color: whitesmoke;
+                    
                     #chat-interface {
-                        overflow-y: scroll; 
                         height: 80%;
-                        display: flex;
-                        flex-direction: column;
-                        flex-wrap: nowrap;
-                        justify-content: flex-end;
-                        p {
-                            padding: 10px;
-                            border-radius: 0.4rem;
-                            color: white;
-                            display: block;
-                            max-width: 80%;
-                            margin: 1% 3%;
-                        }
-                        
-                        .user-message {
-                            background-color: #118ab2;
-                            align-self: flex-end;
-                        }
-                        .friend-message {
-                            background-color: #e86363;
-                            align-self: flex-start;
+                        overflow-y: scroll;
+                        scroll-behavior: smooth; 
+                        ul {
+                            margin: 0;
+                            padding: 0;
+                            list-style: none;
+                            display: flex;
+                            flex-direction: column;
+                            flex-wrap: nowrap;
+                            justify-content: flex-start;
+                            li {
+                                padding: 10px;
+                                border-radius: 0.4rem;
+                                color: white;
+                                display: block;
+                                max-width: 80%;
+                                margin: 1% 3%;
+
+                                p {
+                                    margin: 0;
+                                }
+                            }
+                            
+                            .user-message {
+                                background-color: #118ab2;
+                                align-self: flex-end;
+                            }
+                            .friend-message {
+                                background-color: #e86363;
+                                align-self: flex-start;
+                            }
                         }
                     }
+                        
 
                     #chat-form-container {
                         height: 20%;
-
-                        form {
-                            height: 100%;
-                            width: 100%;
-                            display: flex;
-                            justify-content: center;
-                            align-items: center;
-                            textarea {
-                                margin: 1%;
-                                border: none;
-                                background-color: silver;
-                                border-radius: 0.4rem;
-                                box-sizing: border-box;
-                                
-                                padding: .5rem;
-
-                                font-family: Quicksand;
-                                font-weight: bold;
-                                font-size: 1.1rem;
-                                color: black;
-
-                                &:focus {
-                                    outline: none;
-                                }
-                            }
-
-                            button {
-                                border: none;
-                                background-color: none;
-                                font-size: 2rem;
-                                color:slateblue;
+                        width: 100%;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        textarea {
+                            margin: 1%;
+                            border: none;
+                            background-color: silver;
+                            border-radius: 0.4rem;
+                            box-sizing: border-box;
                             
-                                &:hover {
-                                    transition: all 0.5s;
-                                    color: rgb(196, 15, 75);
-                                }
+                            padding: .5rem;
+
+                            font-family: Quicksand;
+                            font-weight: bold;
+                            font-size: 1.1rem;
+                            color: black;
+
+                            &:focus {
+                                outline: none;
+                            }
+                        }
+
+                        button {
+                            border: none;
+                            background-color: none;
+                            font-size: 2rem;
+                            color:slateblue;
+                        
+                            &:hover {
+                                transition: all 0.5s;
+                                color: rgb(196, 15, 75);
                             }
                         }
                     }

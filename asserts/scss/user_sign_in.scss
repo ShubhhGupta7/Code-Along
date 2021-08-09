@@ -9,19 +9,21 @@ main {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: center;
 
     #description {
         padding: 15rem 5rem;
         height: 93vh;
         width: 50%;
+
+        min-width: 650px;
         box-sizing: border-box;
         background-image: linear-gradient(
             153deg
             ,hsla(0,0%,100%,0),rgba(56,153,236,.12)),linear-gradient(#f0f4f7,#f0f4f7);
 
         #logo-container {
-            margin-top: 3rem;
+            margin-top: -3rem;
             font-size: 5rem;
             font-family: fangsong;
             font-weight: lighter;
@@ -50,6 +52,8 @@ main {
         padding: 5rem;
         height: 93vh;
         width: 50%;
+
+        min-width: 650px;
         box-sizing: border-box;
         background-color: #3174a0;
 

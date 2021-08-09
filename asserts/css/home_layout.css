@@ -2,6 +2,7 @@ body {
   color: grey;
   font-family: Quicksand;
   font-weight: bold;
+  background-color: whitesmoke;
 }
 
 body main {
@@ -29,6 +30,7 @@ body main section .sub-container {
   margin: 2rem 0rem;
   width: 100%;
   border-bottom: 1px solid lightgrey;
+  background-color: #efeae1;
 }
 
 body main #feed-post {
@@ -81,6 +83,21 @@ body main #feed-post #comments-display-container {
   width: 100%;
 }
 
+body main #feed-post #comments-display-container li {
+  border: none;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+body main #feed-post #comments-display-container li h4 {
+  margin: 0;
+}
+
+body main #feed-post #comments-display-container li .comment-content {
+  margin: 0;
+  margin-top: 5px;
+}
+
 body main #feed-post #comments-display-container .comment .comment-header {
   display: flex;
   flex-direction: row;
@@ -107,19 +124,20 @@ body main #feed-post #comments-display-container .comment .comment-header .comme
   position: absolute;
   width: 70px;
   z-index: 1;
-  font-size: 1rem;
+  font-size: .9rem;
 }
 
 body main #feed-post #comments-display-container .comment .comment-header .comment-options-dropdown .comment-options-dropdown-content a {
   padding: 5px;
   text-decoration: none;
   color: black;
-  background-color: white;
+  background-color: lightgray;
   display: block;
+  border: 1px solid silver;
 }
 
 body main #feed-post #comments-display-container .comment .comment-header .comment-options-dropdown .comment-options-dropdown-content a:hover {
-  background-color: whitesmoke;
+  background-color: silver;
 }
 
 body main #feed-post ul {
@@ -129,23 +147,27 @@ body main #feed-post ul {
 
 body main #feed-post ul li {
   text-align: left;
+  padding: 0rem 1rem 1rem 1rem;
+  background-color: white;
+  border: 1px solid lightgrey;
 }
 
 body main #feed-post ul li h4 {
   margin: 1rem 0.2rem;
   color: black;
-  font-size: 1.2rem;
+  font-size: 1rem;
 }
 
 body main #feed-post ul li p {
-  margin: 0.3rem;
-  font-size: 1.1rem;
+  margin: 1rem 0rem;
+  font-size: 1rem;
 }
 
 body main #feed-post .post-header {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  border-bottom: 1px solid lightgrey;
 }
 
 body main #feed-post .post-header .post-options-dropdown {
@@ -159,7 +181,7 @@ body main #feed-post .post-header .post-options-dropdown:hover .post-options-dro
 
 body main #feed-post .post-header .post-options-dropdown #dropdown-btn {
   display: block;
-  margin-top: .6rem;
+  margin-top: 1.4rem;
   cursor: pointer;
 }
 
@@ -168,19 +190,20 @@ body main #feed-post .post-header .post-options-dropdown .post-options-dropdown-
   position: absolute;
   width: 70px;
   z-index: 1;
-  font-size: 1rem;
+  font-size: .9rem;
 }
 
 body main #feed-post .post-header .post-options-dropdown .post-options-dropdown-content a {
   padding: 5px;
   text-decoration: none;
   color: black;
-  background-color: white;
+  background-color: lightgray;
   display: block;
+  border: 1px solid silver;
 }
 
 body main #feed-post .post-header .post-options-dropdown .post-options-dropdown-content a:hover {
-  background-color: whitesmoke;
+  background-color: silver;
 }
 
 body main #feed-post .action-bar {
@@ -191,7 +214,7 @@ body main #feed-post .action-bar {
 
 body main #feed-post .action-bar .action-container {
   font-size: 1.5rem;
-  width: 96%;
+  width: 100%;
 }
 
 body main #feed-post .action-bar .action-container .actions div {
@@ -209,6 +232,15 @@ body main #feed-post .action-bar .action-container .actions div a p {
   font-family: Quicksand;
   color: grey;
   font-weight: bold;
+}
+
+body main #feed-post .user-image {
+  height: 25px;
+  width: 25px;
+  border-radius: 50%;
+  margin-right: 10px;
+  box-shadow: 0px 1px 2px 1px black;
+  vertical-align: bottom;
 }
 
 body main #friend-chat-container {
@@ -251,6 +283,7 @@ body main #friend-chat-container ul li p img {
 body main #friend-chat-container ul li p a {
   color: grey;
   text-decoration: none;
+  font-size: 1rem;
 }
 
 body main #friend-chat-container ul li p a:hover {

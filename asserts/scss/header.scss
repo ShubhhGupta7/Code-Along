@@ -32,7 +32,7 @@ header {
                 margin-left: 1rem;
                 a {
                     text-decoration: none;
-                    color : black;
+                    color : grey;
                     font-size: 1.2rem;
                     
                     img {
@@ -45,14 +45,14 @@ header {
 
                         &:hover {
                             transition: border 0.5s;
-                            border: .5px solid dodgerblue;
+                            border: .5px solid black;
                         }
 
                     }
 
                     &:hover {
                         transition: all .5s;
-                        color: dodgerblue;
+                        color: black;
                         font-size: 1.22rem;
                     }
 

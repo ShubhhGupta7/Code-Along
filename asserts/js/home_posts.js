@@ -46,6 +46,12 @@
         <li id="post-${post._id}" class="sub-container">    
         <div class="post-header">
             <div class="post-heading">
+                <% if( post.user.avatar ) { %>
+                    <img class="user-image" src="${post.user.avatar}" alt="pp">
+                <% } else {%>
+                    <img class="user-image" src="https://www.kindpng.com/picc/m/78-786207_user-avatar-png-user-avatar-icon-png-transparent.png" alt="avatar">
+                <% } %>
+
                 <h4> ${post.user.name} </h4>
             </div>
     

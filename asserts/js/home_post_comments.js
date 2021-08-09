@@ -60,7 +60,13 @@ class PostComments {
             <li id="comment-${comment._id}" class="comment">
                 <div class="comment-header">
                     <div class="comment-heading">
-                        <h4> ${comment.user.name} </h4>
+                        <h4> 
+                        <% if( comment.user.avatar ) { %>
+                            <img class="user-image" src="${comment.user.avatar}" alt="pp">
+                        <% } else {%>
+                            <img class="user-image" src="https://www.kindpng.com/picc/m/78-786207_user-avatar-png-user-avatar-icon-png-transparent.png" alt="avatar">
+                        <% } %>
+                        ${comment.user.name} </h4>
                     </div>
             
                     <div class="comment-options-dropdown" style="float: right;" >

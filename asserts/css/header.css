@@ -37,7 +37,7 @@ header .horizontal-list ul li {
 
 header .horizontal-list ul li a {
   text-decoration: none;
-  color: black;
+  color: grey;
   font-size: 1.2rem;
 }
 
@@ -52,11 +52,11 @@ header .horizontal-list ul li a img {
 
 header .horizontal-list ul li a img:hover {
   transition: border 0.5s;
-  border: .5px solid dodgerblue;
+  border: .5px solid black;
 }
 
 header .horizontal-list ul li a:hover {
   transition: all .5s;
-  color: dodgerblue;
+  color: black;
   font-size: 1.22rem;
 }
