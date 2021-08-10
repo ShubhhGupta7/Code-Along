@@ -9,27 +9,50 @@
                 <i class="far fa-comment-alt"></i>
             </span>
             <span>Chats</span>
-            <span style="margin: 0px 25vw;">Messages</span>
+            <span id="curr-user" style="margin: 0px 0vw 0 20vw;">
+                <img id='curr-user-img'>
+                <span id="curr-user-name">Messages</span>
+                
+            </span>
         </div>
             <div id="main">
                 <section id="chats-list">
-                   
+                    <ul>
+                        <% for(friend of friend_list) { %>
+                            <li>
+                                <p> 
+                                    <span>
+                                        <% if( friend.avatar ) { %>
+                                            <img src="<%= friend.avatar%>" alt="pp">
+                                        <% } else {%>
+                                            <img src="https://www.kindpng.com/picc/m/78-786207_user-avatar-png-user-avatar-icon-png-transparent.png" alt="avatar">
+                                        <% } %>
+                                        <a class="connect-to" data-img="<%= friend.avatar%>" data-name="<%= friend.name%>" data-id="<%= friend._id%>"><%=friend.name%></a>    
+                                        </span>
+                                </p>
+                            </li>
+                        <% } %>        
+                    </ul>
                 </section>
                     
                 <section id="chat-box">
                     <div id="chat-interface">
                         <ul id="chat-message-list">
-                            <li class="user-message">
-                                <p >
-                                    User-Message
-                                </p>
+                            <!-- <li class="user-message">
+                                <div class="mssg-info-container">
+                                    <p >
+                                        User-Message
+                                    </p>
+                                </div>
                             </li>
                             <li  class="friend-message">    
-                                <p>
-                                    Friend-Message
-                                </p>
+                                <div class="mssg-info-container">
+                                    <p>
+                                        Friend-Message
+                                    </p>
+                                </div>
                             </li>
-                        </ul>
+                        </ul> -->
                     </div>
                     
                     <div id="chat-form-container">  
@@ -48,7 +71,7 @@
 
     <%if(locals.user) { %>
         <script>
-            new ChatEngine('chat-interface', '<%= locals.user.email %>');
+            new ChatEngine('chat-interface', '<%= locals.user._id %>');
         </script>
     <% } %>
 

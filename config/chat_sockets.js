@@ -12,7 +12,7 @@
 
 // Binary Streaming: We can send any blob back and forth: like: video, audio, image
 
-
+const User = require('../models/user');
 
 
 module.exports.chatSockets = function(socketServer){
@@ -38,17 +38,27 @@ module.exports.chatSockets = function(socketServer){
         });
 
         // requesting for joining the room  if there we connect else it will create new room
-        socket.on('join_room', function(data){
+        socket.on('join_room', async function(data){
             console.log('joining request rec.', data);
 
-            socket.join(data.chatroom);
+            await socket.join(data.chatroom);
 
-            io.in(data.chatroom).emit('user_joined', data);
+            await io.in(data.chatroom).emit('user_joined', data);
         });
 
         // CHANGE :: detect send_message and broadcast to everyone in the room
         socket.on('send_message', function(data){
-            io.in(data.chatroom).emit('receive_message', data);
+            User.findById(data.user_id, function(err, user) {
+                if(err) {
+                    console.log('User not found!', err);
+                    return;
+                }
+                data.user = user;
+                io.in(data.chatroom).emit('receive_message', data);
+            });
+            
+            
+            
         });
 
     });

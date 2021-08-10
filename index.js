@@ -25,6 +25,9 @@ const chatSockets = require('./config/chat_sockets').chatSockets(chatServer);
 chatServer.listen(5000);
 console.log('Chat server is listening on port 5000');
 
+// It establish cross connection between socket.io server and client.....
+// in previous version it was in bulid 
+// but for now we have to install this and use like i mention below
 cors = require("cors");
 app.use(cors());
 

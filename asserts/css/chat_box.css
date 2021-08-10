@@ -34,6 +34,23 @@ body main #chat-engine #header span {
   margin: 0px 2.5vw;
 }
 
+body main #chat-engine #header #curr-user {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+
+body main #chat-engine #header #curr-user span {
+  margin: 1rem;
+}
+
+body main #chat-engine #header #curr-user img {
+  height: 25px;
+  width: 25px;
+  border-radius: 50%;
+  align-self: center;
+}
+
 body main #chat-engine #main {
   display: flex;
   flex-wrap: wrap;
@@ -47,6 +64,41 @@ body main #chat-engine #main #chats-list {
   overflow-y: scroll;
   background-color: lightgrey;
   height: 100%;
+}
+
+body main #chat-engine #main #chats-list ul {
+  list-style: none;
+  padding: 0;
+  margin: 1rem;
+  text-align: left;
+}
+
+body main #chat-engine #main #chats-list ul li p {
+  margin: 1.5rem 0;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+}
+
+body main #chat-engine #main #chats-list ul li p img {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  margin-right: 10px;
+  box-shadow: 0px 1px 2px 1px black;
+  vertical-align: middle;
+}
+
+body main #chat-engine #main #chats-list ul li p a {
+  color: #5a3939;
+  text-decoration: none;
+  font-size: 1rem;
+}
+
+body main #chat-engine #main #chats-list ul li p a:hover {
+  transition: all 0.5s;
+  color: black;
 }
 
 body main #chat-engine #main #chat-box {
@@ -71,26 +123,49 @@ body main #chat-engine #main #chat-box #chat-interface ul {
 }
 
 body main #chat-engine #main #chat-box #chat-interface ul li {
-  padding: 10px;
-  border-radius: 0.4rem;
-  color: white;
   display: block;
-  max-width: 80%;
+  justify-self: flex-start;
+  align-items: center;
   margin: 1% 3%;
 }
 
-body main #chat-engine #main #chat-box #chat-interface ul li p {
+body main #chat-engine #main #chat-box #chat-interface ul li .mssg-info-container {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+
+body main #chat-engine #main #chat-box #chat-interface ul li .mssg-info-container img {
+  height: 25px;
+  width: 25px;
+  border-radius: 50%;
+  margin: .5rem;
+  box-shadow: 0px 1px 2px 1px black;
+  vertical-align: middle;
+}
+
+body main #chat-engine #main #chat-box #chat-interface ul li .mssg-info-container p {
   margin: 0;
+  padding: 0.7rem 1rem;
+  border-radius: 0.4rem;
+  color: white;
+  max-width: 80%;
 }
 
 body main #chat-engine #main #chat-box #chat-interface ul .user-message {
-  background-color: #118ab2;
   align-self: flex-end;
 }
 
+body main #chat-engine #main #chat-box #chat-interface ul .user-message p {
+  background-color: #118ab2;
+}
+
 body main #chat-engine #main #chat-box #chat-interface ul .friend-message {
-  background-color: #e86363;
   align-self: flex-start;
+}
+
+body main #chat-engine #main #chat-box #chat-interface ul .friend-message p {
+  background-color: #e86363;
 }
 
 body main #chat-engine #main #chat-box #chat-form-container {

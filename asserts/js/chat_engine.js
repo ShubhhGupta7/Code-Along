@@ -1,18 +1,65 @@
 class ChatEngine{
-    constructor(chatBoxId, userEmail){
+    constructor(chatBoxId, userId){
         this.chatBox = $(`#${chatBoxId}`);
-        this.userEmail = userEmail;
+        this.userId = userId;
 
         this.socket = io.connect('http://localhost:5000');
 
-        if (this.userEmail){
-            this.connectionHandler();
+        let self = this;
+        if (this.userId){
+            let connectTo =$('.connect-to');
+            for(let i = 0; i < connectTo.length; i++) {
+                let friendId = $(connectTo[i]).attr('data-id');
+
+                let key =  self.getKey(friendId, self.userId);
+                console.log('key', key);
+                self.key = key;
+                self.connectionHandler(key);
+                console.log('controller called');
+            }
+
+            connectTo.click( this,function(event) {
+                event.preventDefault();
+
+                let name = $(this).attr('data-name');
+                console.log(name);
+                $('#curr-user-name').html(`${name}`);
+                
+                let userAva = $(this).attr('data-img');;
+                if(!userAva) {
+                    userAva = "https://www.kindpng.com/picc/m/78-786207_user-avatar-png-user-avatar-icon-png-transparent.png" 
+                }
+                $('#curr-user-img').prop({
+                    src: userAva
+                });
+                
+
+                let friendId = $(this).attr('data-id');
+                
+                let key =  self.getKey(friendId, self.userId);
+                
+                console.log('key', key);
+                self.receiveKey = key;
+            });
         }
 
     }
 
+    getKey(friendId, userId) {
+        let key = 0;
 
-    connectionHandler(){
+        let toMultiply = 1;
+        for(let i = 0; i < friendId.length; i++) {
+      
+            let digit = (friendId.charCodeAt(i) + userId.charCodeAt(i)) * toMultiply;
+            key += digit;
+            toMultiply *= 2;
+        }
+        return key;
+    }
+
+    connectionHandler(sendkey) {
+        console.log('connection Handler called!');
         let self = this;
 
         this.socket.on('connect', function(){
@@ -20,8 +67,8 @@ class ChatEngine{
 
 
             self.socket.emit('join_room', {
-                user_email: self.userEmail,
-                chatroom: 'codeial'
+                user_id: self.userId,
+                chatroom: sendkey
             });
 
             self.socket.on('user_joined', function(data){
@@ -39,8 +86,9 @@ class ChatEngine{
                 $('#chat-message-input').val('');
                 self.socket.emit('send_message', {
                     message: msg,
-                    user_email: self.userEmail,
-                    chatroom: 'codeial'
+                    user_id: self.userId,
+                    chatroom: self.receiveKey
+
                 });
             }
         }
@@ -48,29 +96,46 @@ class ChatEngine{
         $('#send-message').click(snedMessageHandler);
         $('#chat-message-input').keypress(function(event) {
             if(event.which == 13) {
+                event.preventDefault();
                 snedMessageHandler();
             }
         });
 
         self.socket.on('receive_message', function(data){
-            console.log('message received', data.message);
+            console.log('message received', data);
 
 
             let newMessage = $('<li>');
 
             let messageType = 'friend-message';
-
-            if (data.user_email == self.userEmail){
+            
+            if (data.user._id == self.userId){
                 messageType = 'user-message';
             }
 
-            newMessage.append($('<p>', {
+            let messageContainer = $('<div>').addClass("mssg-info-container"); 
+            newMessage.append(messageContainer);
+            
+            messageContainer.append($('<p>', {
                 'html': data.message
             }));
 
-            newMessage.append($('<sub>', {
-                'html': data.user_email
-            }));
+            let userAva = data.user.avatar;
+            if(!data.user.avatar) {
+                userAva = "https://www.kindpng.com/picc/m/78-786207_user-avatar-png-user-avatar-icon-png-transparent.png" 
+            }
+
+
+            if( messageType == 'user-message') {
+                messageContainer.append($('<img>', {
+                    'src': userAva
+                }));
+            } else {
+                messageContainer.prepend($('<img>', {
+                    'src': userAva
+                }));
+            }
+            
 
             newMessage.addClass(messageType);
 
