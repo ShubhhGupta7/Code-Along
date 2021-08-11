@@ -9,13 +9,14 @@ main {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: center;
 }
 
 main #description {
   padding: 15rem 5rem;
   height: 93vh;
   width: 50%;
+  min-width: 650px;
   box-sizing: border-box;
   background-image: linear-gradient(153deg, rgba(255, 255, 255, 0), rgba(56, 153, 236, 0.12)), linear-gradient(#f0f4f7, #f0f4f7);
 }
@@ -47,6 +48,7 @@ main .sign-in-container {
   padding: 5rem;
   height: 93vh;
   width: 50%;
+  min-width: 650px;
   box-sizing: border-box;
   background-color: #3174a0;
 }
@@ -63,9 +65,11 @@ main .sign-in-container .heading-container h2 {
 main .sign-in-container input {
   font-size: 1rem;
   background: none;
-  border: .1rem solid black;
-  color: black;
   font-weight: bold;
+  border-radius: 0.4rem;
+  background-color: #2d83bcfc;
+  border: none;
+  color: white;
   margin: .3rem;
   padding: .7rem 9rem 0.7rem 1rem;
 }

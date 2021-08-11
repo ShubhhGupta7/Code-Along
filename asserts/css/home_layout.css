@@ -30,7 +30,7 @@ body main section .sub-container {
   margin: 2rem 0rem;
   width: 100%;
   border-bottom: 1px solid lightgrey;
-  background-color: #efeae1;
+  background-color: white;
 }
 
 body main #feed-post {

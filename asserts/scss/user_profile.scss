@@ -103,7 +103,9 @@ body {
 
             input ,textarea {
                 display: block;
-
+                border: none;
+                background-color: whitesmoke;
+                color:darkslategray;
                 margin : auto;
                 margin-bottom: 1rem;
                 padding: .5rem 1rem .5rem 1rem;
@@ -112,6 +114,10 @@ body {
                 text-align: left;
                 font-size: 1.2rem;
                 
+            }
+
+            #avatar-input {
+                background-color: white;
             }
 
             #btn {

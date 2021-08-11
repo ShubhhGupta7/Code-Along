@@ -68,9 +68,11 @@ main {
         input {
             font-size: 1rem;
             background: none;
-            border: .1rem solid black;
-            color: black;
             font-weight: bold;
+            border-radius: 0.4rem;
+            background-color: #2d83bcfc;
+            border: none;
+            color: white;
             margin: .3rem;
             padding: .7rem 9rem 0.7rem 1rem;
 

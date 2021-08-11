@@ -101,12 +101,19 @@ body main #profile-edit-container {
 
 body main #profile-edit-container input, body main #profile-edit-container textarea {
   display: block;
+  border: none;
+  background-color: whitesmoke;
+  color: darkslategray;
   margin: auto;
   margin-bottom: 1rem;
   padding: .5rem 1rem .5rem 1rem;
   font-weight: bold;
   text-align: left;
   font-size: 1.2rem;
+}
+
+body main #profile-edit-container #avatar-input {
+  background-color: white;
 }
 
 body main #profile-edit-container #btn {

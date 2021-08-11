@@ -37,6 +37,13 @@ module.exports.chatSockets = function(socketServer){
             console.log('socket disconnected!');
         });
 
+        // requesting to leave the preveious room before entering to new room
+        socket.on('leave_room', async function(data) {
+            console.log('Leaving request rec.', data);
+
+            await socket.leave(data.prevroom);
+        });
+
         // requesting for joining the room  if there we connect else it will create new room
         socket.on('join_room', async function(data){
             console.log('joining request rec.', data);

@@ -1,3 +1,4 @@
+let self;
 class ChatEngine{
     constructor(chatBoxId, userId){
         this.chatBox = $(`#${chatBoxId}`);
@@ -5,19 +6,11 @@ class ChatEngine{
 
         this.socket = io.connect('http://localhost:5000');
 
-        let self = this;
+        self = this;
         if (this.userId){
             let connectTo =$('.connect-to');
-            for(let i = 0; i < connectTo.length; i++) {
-                let friendId = $(connectTo[i]).attr('data-id');
-
-                let key =  self.getKey(friendId, self.userId);
-                console.log('key', key);
-                self.key = key;
-                self.connectionHandler(key);
-                console.log('controller called');
-            }
-
+            
+            self.connectionHandler();
             connectTo.click( this,function(event) {
                 event.preventDefault();
 
@@ -39,7 +32,12 @@ class ChatEngine{
                 let key =  self.getKey(friendId, self.userId);
                 
                 console.log('key', key);
-                self.receiveKey = key;
+                if(self.chatroom) {
+                    self.prevroom = self.chatroom;
+                }
+                self.chatroom = key;
+
+                self.handelJoinRoom();
             });
         }
 
@@ -58,24 +56,30 @@ class ChatEngine{
         return key;
     }
 
-    connectionHandler(sendkey) {
+    connectionHandler() {
         console.log('connection Handler called!');
         let self = this;
 
         this.socket.on('connect', function(){
             console.log('connection established using sockets...!');
-
-
-            self.socket.emit('join_room', {
+        });
+    }
+        
+    handelJoinRoom() {
+        if(self.prevroom) {
+            self.socket.emit('leave_room', {
                 user_id: self.userId,
-                chatroom: sendkey
+                prevroom: self.prevroom
             });
+        }
 
-            self.socket.on('user_joined', function(data){
-                console.log('a user joined!', data);
-            })
+        self.socket.emit('join_room', {
+            user_id: self.userId,
+            chatroom: self.chatroom
+        });
 
-
+        self.socket.on('user_joined', function(data){
+            console.log('a user joined!', data);
         });
 
         // CHANGE :: send a message on clicking the send message button
@@ -87,7 +91,7 @@ class ChatEngine{
                 self.socket.emit('send_message', {
                     message: msg,
                     user_id: self.userId,
-                    chatroom: self.receiveKey
+                    chatroom: self.chatroom
 
                 });
             }

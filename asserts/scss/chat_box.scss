@@ -18,7 +18,7 @@ body {
                 border-radius: 0.8rem 0.8rem 0rem 0rem;
                 height: 10%;
     
-                background-color: black;
+                background-color: #f44336c7;
                 color: white;
     
                 display: flex;
@@ -56,7 +56,7 @@ body {
                 #chats-list {
                     width: 35%;
                     overflow-y: scroll;
-                    background-color: lightgrey;
+                    background-color: #f2dede;
                     height: 100%;
 
                     ul {
@@ -87,6 +87,7 @@ body {
                                     &:hover {
                                         transition: all 0.5s;
                                         color: black;
+                                        cursor: pointer;
                                     }
                                 }
                             }
@@ -102,6 +103,7 @@ body {
                         height: 80%;
                         overflow-y: scroll;
                         scroll-behavior: smooth; 
+                        background-color: #ebebeb;
                         ul {
                             margin: 0;
                             padding: 0;
@@ -166,7 +168,7 @@ body {
                         textarea {
                             margin: 1%;
                             border: none;
-                            background-color: silver;
+                            background-color: #f2dede;
                             border-radius: 0.4rem;
                             box-sizing: border-box;
                             
@@ -186,7 +188,7 @@ body {
                             border: none;
                             background-color: none;
                             font-size: 2rem;
-                            color:slateblue;
+                            color:#f44336c7;
                         
                             &:hover {
                                 transition: all 0.5s;

@@ -77,7 +77,7 @@
                 </div>
 
                 <form action="/users/update/<%= profile_user.id%>" method="POST" id="update-form" enctype="multipart/form-data">
-                    <input type="file" name="avatar" placeholder="Upload Profile Picture">
+                    <input id="avatar-input" type="file" name="avatar" placeholder="Upload Profile Picture">
                     
                     <input type="text" name="name" placeholder="Your username" value="<%= profile_user.name%>" required>
 
