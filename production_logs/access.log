@@ -324,3 +324,4 @@
 [0mGET /friendship/toggle/610a23de527d6144a078f202 [32m200[0m 41.897 ms - 81[0m
 [0mGET /friendship/toggle/610a23de527d6144a078f202 [32m200[0m 42.656 ms - 80[0m
 [0mGET /friendship/toggle/610a23de527d6144a078f202 [32m200[0m 40.939 ms - 81[0m
+[0mGET /chat-engine/chats [32m200[0m 168.691 ms - 7459[0m
