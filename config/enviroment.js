@@ -7,16 +7,16 @@
 // In production mode we use enviroment variables instead of static one so that not everyone can access it, but the one we want to. And they are dynamic that means random string.
 
 const fs = require('fs');
-const rfs = require('rotating-file-stream');
+// const rfs = require('rotating-file-stream');
 const path = require('path');
 
-const logDirectory = path.join(__dirname, '../production_logs');
-fs.existsSync(logDirectory) || fs.mkdirSync(logDirectory);
+// const logDirectory = path.join(__dirname, '../production_logs');
+// fs.existsSync(logDirectory) || fs.mkdirSync(logDirectory);
 
-const accessLogStream = rfs.createStream('access.log', {
-    interval: '1d',
-    path: logDirectory
-});
+// const accessLogStream = rfs.createStream('access.log', {
+//     interval: '1d',
+//     path: logDirectory
+// });
 
 
 
@@ -48,10 +48,10 @@ const development = {
     google_call_back_url: 'http://localhost:8000/users/auth/google/callback',
     // key 2
     jwt_secret: 'codeial',
-    morgan: {
-        mode: 'dev',
-        options: {stream: accessLogStream}
-    }
+    // morgan: {
+    //     mode: 'dev',
+    //     options: {stream: accessLogStream}
+    // }
 }
 // both keys which are listed above must be random in production enviroment so we will use a website randomkeygen for randomly generating the keys for our keys so that no one can decript them
 
@@ -119,10 +119,10 @@ const production =  {
     google_client_secret: process.env.CODEIAL_GOOGLE_CLIENT_SECRET,
     google_call_back_url: process.env.CODEIAL_GOOGLE_CALL_BACK_URL,
     jwt_secret: process.env.CODEIAL_JWT_SECRET,
-    morgan: {
-        mode: 'combined',
-        options: {stream: accessLogStream}
-    }
+    // morgan: {
+    //     mode: 'combined',
+    //     options: {stream: accessLogStream}
+    // }
 }
 
 

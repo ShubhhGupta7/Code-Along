@@ -64,7 +64,7 @@ app.use(express.static(env.assert_path));
 // make the uploads path avaliable to the browser
 app.use('/uploads', express.static(__dirname + '/uploads'));
 
-app.use(logger(env.morgan.mode, env.morgan.options));
+// app.use(logger(env.morgan.mode, env.morgan.options));
 
 // Using layouts with partials
 app.use(expressLayouts);

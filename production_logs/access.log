@@ -325,3 +325,13 @@
 [0mGET /friendship/toggle/610a23de527d6144a078f202 [32m200[0m 42.656 ms - 80[0m
 [0mGET /friendship/toggle/610a23de527d6144a078f202 [32m200[0m 40.939 ms - 81[0m
 [0mGET /chat-engine/chats [32m200[0m 168.691 ms - 7459[0m
+[0mGET /chat-engine/chats [36m302[0m 78.661 ms - 72[0m
+[0mGET /users/sign-in [32m200[0m 277.871 ms - 5802[0m
+[0mGET /favicon.ico [33m404[0m 3.839 ms - 150[0m
+[0mGET /users/sign-in [36m304[0m 6.202 ms - -[0m
+[0mGET /users/sign-in [36m304[0m 5.016 ms - -[0m
+[0mGET /users/sign-in [36m304[0m 5.793 ms - -[0m
+[0mGET /users/auth/google [36m302[0m 5.160 ms - 0[0m
+[0mGET /users/auth/google/callback?code=4%2F0AX4XfWiFOhT4XRdeAnpXMds555lFilVIyHIK1LSX1SItMnGLsjNUfi7xk-fGPONKBRSfBQ&scope=email+profile+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email+openid&authuser=1&prompt=consent [36m302[0m 1318.679 ms - 46[0m
+[0mGET / [32m200[0m 397.505 ms - 80223[0m
+[0mGET /chat-engine/chats [32m200[0m 17.016 ms - 7459[0m
