@@ -1,6 +1,4 @@
-<link rel="stylesheet" href="/css/header.css">
-<link rel="stylesheet" href="/css/footer.css">
-<link rel="stylesheet" href="/css/home_layout.css">
+<link type="text/css" rel="stylesheet" href="<%= assertPath('css/home_layout.css')%>">
 
 <main>
     <% if(locals.user) { %>
@@ -88,11 +86,11 @@
         </div>
     </section>    
     
-    <script src="/js/home_post_comments.js"></script>
-    <script src="/js/home_posts.js"></script>
+    <script src="<%= assertPath('js/home_post_comments.js')%>"></script>
+    <script src="<%= assertPath('js/home_posts.js')%>"></script>
 
      <!-- import the script file for toggle likes, also run it over for the already present posts and comments on the page  -->
-    <script src="/js/toggle_likes.js"></script>
+    <script src="<%= assertPath('js/toggle_likes.js')%>"></script>
     <script>
         $(' .toggle-like-button').each(function() {
             let self = this;
@@ -100,6 +98,6 @@
         })
     </script>
 
-    <script src="/js/toggle_friendship.js"></script>
+    <script src="<%= assertPath('js/toggle_friendship.js')%>"></script>
 </main>
                     

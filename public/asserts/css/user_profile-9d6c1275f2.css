@@ -1,0 +1,171 @@
+body {
+  margin: 0;
+  padding: 0px;
+  font-family: Quicksand;
+  font-weight: bold;
+  text-align: center;
+}
+
+body main {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+body main > section {
+  box-sizing: border-box;
+  display: inline-block;
+  margin: auto;
+}
+
+body main #profile-view-container {
+  width: 100%;
+}
+
+body main #profile-view-container #information-section {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  border-bottom: 1px solid lightgrey;
+}
+
+body main #profile-view-container #information-section .info {
+  height: 100px;
+  width: 300px;
+  padding-bottom: 2rem;
+}
+
+body main #profile-view-container #information-section .info h2 {
+  color: black;
+}
+
+body main #profile-view-container #information-section .info h3 {
+  color: grey;
+}
+
+body main #details-profile-picture-container {
+  width: 70%;
+  margin: 0;
+}
+
+body main #details-profile-picture-container h2 {
+  color: black;
+}
+
+body main #details-profile-picture-container h3 {
+  color: grey;
+}
+
+body main #details-profile-picture-container #details, body main #details-profile-picture-container #profile {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  width: 100%;
+}
+
+body main #details-profile-picture-container #details > div, body main #details-profile-picture-container #profile > div {
+  width: 300px;
+}
+
+body main #details-profile-picture-container #profile {
+  min-height: 300px;
+}
+
+body main #details-profile-picture-container #profile #profile-picture img {
+  height: 150px;
+  width: 150px;
+  border-radius: 50%;
+  border: 1px solid grey;
+  box-shadow: 0px 0px 6px 2px lightgrey;
+}
+
+body main #details-profile-picture-container #profile #about {
+  height: 200px;
+  width: 400px;
+}
+
+body main #details-profile-picture-container #profile #about h3 {
+  width: inherit;
+  text-align: left;
+  overflow-y: scroll;
+}
+
+body main #profile-edit-container {
+  width: 300px;
+  padding: 1rem;
+  margin: 0;
+}
+
+body main #profile-edit-container input, body main #profile-edit-container textarea {
+  display: block;
+  border: none;
+  background-color: whitesmoke;
+  color: darkslategray;
+  margin: auto;
+  margin-bottom: 1rem;
+  padding: .5rem 1rem .5rem 1rem;
+  font-weight: bold;
+  text-align: left;
+  font-size: 1.2rem;
+}
+
+body main #profile-edit-container #avatar-input {
+  background-color: white;
+}
+
+body main #profile-edit-container #btn {
+  color: white;
+  background-color: dodgerblue;
+  border-radius: 0.2rem;
+  border: none;
+  padding: .5rem 0.7rem;
+}
+
+body main #profile-edit-container #btn:hover {
+  transition: all 0.5s ease-in-out;
+  background-color: rgba(12, 117, 223, 0.884);
+  color: whitesmoke;
+}
+
+body main #add-friend {
+  box-sizing: border-box;
+  font-family: Quicksand;
+  font-size: 1.5rem;
+  margin: 3rem;
+  border: none;
+  font-weight: bold;
+  background-color: dodgerblue;
+  color: white;
+  height: 50px;
+  width: 150px;
+}
+
+body main #add-friend:hover {
+  transition: all 0.5s;
+  background-color: #0f58a1;
+  color: whitesmoke;
+}
+
+body main #remove-friend {
+  box-sizing: border-box;
+  font-family: Quicksand;
+  font-size: 1.5rem;
+  margin: 3rem;
+  border: none;
+  font-weight: bold;
+  padding: 0.3rem 1rem;
+  color: black;
+  background-color: whitesmoke;
+  height: 50px;
+  width: 150px;
+}
+
+body main #remove-friend:hover {
+  transition: all 0.5s;
+  background-color: #0f58a1;
+  color: whitesmoke;
+  background-color: black;
+}

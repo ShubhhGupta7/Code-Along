@@ -1,7 +1,10 @@
 //  Nodejs runs on a single main thread on the system and runs multiples processes parallely.
 
 const express = require('express');
+const env = require('./config/enviroment');
+const logger = require('morgan');
 const app = express();
+require('./config/view-helper')(app);
 const cookieParser = require('cookie-parser');
 const port = 8000;
 const expressLayouts = require('express-ejs-layouts');
@@ -31,12 +34,22 @@ console.log('Chat server is listening on port 5000');
 cors = require("cors");
 app.use(cors());
 
-app.use(sassMiddleware( {
-    src: './asserts/scss',
-    dest: './asserts/css',
+const path = require('path');
+
+// app.use(sassMiddleware( {
+//     src: './asserts/scss',
+//     dest: './asserts/css',
+//     debug: true,
+//     outputStyle: 'expanded',
+//     prefix: '/css'
+// }));
+
+app.use(sassMiddleware({
+    src: path.join(__dirname, env.assert_path, 'scss'),
+    dest: path.join(__dirname, env.assert_path, 'css'),
     debug: true,
     outputStyle: 'expanded',
-    prefix: '/css'
+    prefix: '/css'    
 }));
 
 // Middleware to decrypt the form encripted data
@@ -45,10 +58,13 @@ app.use(express.urlencoded());
 app.use(cookieParser());
 
 // using Static files.
-app.use(express.static('./asserts'));
+// app.use(express.static('./asserts));
+app.use(express.static(env.assert_path));
 
 // make the uploads path avaliable to the browser
 app.use('/uploads', express.static(__dirname + '/uploads'));
+
+app.use(logger(env.morgan.mode, env.morgan.options));
 
 // Using layouts with partials
 app.use(expressLayouts);
@@ -65,7 +81,7 @@ app.set('views', './views');
 app.use(session({
     name : 'codeial',
     // TODO change the secret before deployment in production mode
-    secret: 'blahsomething',
+    secret: env.session_cookie_key,
     saveUninitialized : false,
     resave : false,
     cookie : {

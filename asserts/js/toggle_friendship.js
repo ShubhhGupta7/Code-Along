@@ -45,5 +45,5 @@
         });
     }
     convertFriendshipToAjax();
-    toggleFriendship($('#toggle-friendship'));
+    toggleFriendship($('#profile-toggle-friendship'));
 }

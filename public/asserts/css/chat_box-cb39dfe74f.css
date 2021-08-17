@@ -1,0 +1,208 @@
+body {
+  font-family: Quicksand;
+  font-weight: bold;
+}
+
+body main {
+  font-family: Quicksand;
+  font-weight: bold;
+}
+
+body main #chat-engine {
+  margin: 2rem auto;
+  height: 80%;
+  width: 70%;
+  border-radius: 0.8rem 0.8rem 0rem  0rem;
+  border: 1px solid black;
+  min-width: 600px;
+  box-shadow: 2px 2px 5px 1px grey;
+}
+
+body main #chat-engine #header {
+  border-radius: 0.8rem 0.8rem 0rem 0rem;
+  height: 10%;
+  background-color: #f44336c7;
+  color: white;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+body main #chat-engine #header span {
+  font-size: 1.3rem;
+  margin: 0px 2.5vw;
+}
+
+body main #chat-engine #header #curr-user {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+
+body main #chat-engine #header #curr-user span {
+  margin: 1rem;
+}
+
+body main #chat-engine #header #curr-user img {
+  height: 25px;
+  width: 25px;
+  border-radius: 50%;
+  align-self: center;
+}
+
+body main #chat-engine #main {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-evenly;
+  height: 90%;
+}
+
+body main #chat-engine #main #chats-list {
+  width: 35%;
+  overflow-y: scroll;
+  background-color: #f2dede;
+  height: 100%;
+}
+
+body main #chat-engine #main #chats-list ul {
+  list-style: none;
+  padding: 0;
+  margin: 1rem;
+  text-align: left;
+}
+
+body main #chat-engine #main #chats-list ul li p {
+  margin: 1.5rem 0;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+}
+
+body main #chat-engine #main #chats-list ul li p img {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  margin-right: 10px;
+  box-shadow: 0px 1px 2px 1px black;
+  vertical-align: middle;
+}
+
+body main #chat-engine #main #chats-list ul li p a {
+  color: #5a3939;
+  text-decoration: none;
+  font-size: 1rem;
+}
+
+body main #chat-engine #main #chats-list ul li p a:hover {
+  transition: all 0.5s;
+  color: black;
+  cursor: pointer;
+}
+
+body main #chat-engine #main #chat-box {
+  width: 65%;
+  background-color: whitesmoke;
+}
+
+body main #chat-engine #main #chat-box #chat-interface {
+  height: 80%;
+  overflow-y: scroll;
+  scroll-behavior: smooth;
+  background-color: #ebebeb;
+}
+
+body main #chat-engine #main #chat-box #chat-interface ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+}
+
+body main #chat-engine #main #chat-box #chat-interface ul li {
+  display: block;
+  justify-self: flex-start;
+  align-items: center;
+  margin: 1% 3%;
+}
+
+body main #chat-engine #main #chat-box #chat-interface ul li .mssg-info-container {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+
+body main #chat-engine #main #chat-box #chat-interface ul li .mssg-info-container img {
+  height: 25px;
+  width: 25px;
+  border-radius: 50%;
+  margin: .5rem;
+  box-shadow: 0px 1px 2px 1px black;
+  vertical-align: middle;
+}
+
+body main #chat-engine #main #chat-box #chat-interface ul li .mssg-info-container p {
+  margin: 0;
+  padding: 0.7rem 1rem;
+  border-radius: 0.4rem;
+  color: white;
+  max-width: 80%;
+}
+
+body main #chat-engine #main #chat-box #chat-interface ul .user-message {
+  align-self: flex-end;
+}
+
+body main #chat-engine #main #chat-box #chat-interface ul .user-message p {
+  background-color: #118ab2;
+}
+
+body main #chat-engine #main #chat-box #chat-interface ul .friend-message {
+  align-self: flex-start;
+}
+
+body main #chat-engine #main #chat-box #chat-interface ul .friend-message p {
+  background-color: #e86363;
+}
+
+body main #chat-engine #main #chat-box #chat-form-container {
+  height: 20%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+body main #chat-engine #main #chat-box #chat-form-container textarea {
+  margin: 1%;
+  border: none;
+  background-color: #f2dede;
+  border-radius: 0.4rem;
+  box-sizing: border-box;
+  padding: .5rem;
+  font-family: Quicksand;
+  font-weight: bold;
+  font-size: 1.1rem;
+  color: black;
+}
+
+body main #chat-engine #main #chat-box #chat-form-container textarea:focus {
+  outline: none;
+}
+
+body main #chat-engine #main #chat-box #chat-form-container button {
+  border: none;
+  background-color: none;
+  font-size: 2rem;
+  color: #f44336c7;
+}
+
+body main #chat-engine #main #chat-box #chat-form-container button:hover {
+  transition: all 0.5s;
+  color: #c40f4b;
+}

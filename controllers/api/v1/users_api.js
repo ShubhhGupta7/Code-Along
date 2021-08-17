@@ -1,5 +1,6 @@
 const User = require('../../../models/user');
 
+const env = require('../../../config/enviroment');
 const jwt = require('jsonwebtoken');
 // jwt is used to create a encrypted jwt token by using it's sign function where as passport is capable to decrypt that encoded jwt token.
 
@@ -17,7 +18,7 @@ module.exports.createSession = async function(req, res) {
        return res.json(200, {
            message: 'Signin successful, Here is your token, Please keep it safe!',
            data: {
-               Token: jwt.sign(user.toJSON(), 'codeial', {expiresIn: '1000000'})
+               Token: jwt.sign(user.toJSON(), env.jwt_secret, {expiresIn: '1000000'})
            }
        })
 

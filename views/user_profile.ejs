@@ -1,6 +1,5 @@
-<link rel="stylesheet" href="/css/header.css">
-<link rel="stylesheet" href="/css/footer.css">
-<link rel="stylesheet" href="/css/user_profile.css">
+<link rel="stylesheet" href="<%= assertPath('css/user_profile.css')%>">
+
 
 <main>
 
@@ -95,14 +94,14 @@
                 
             </section>
         <% } else { %>
-            <a id="toggle-friendship" href="/friendship/toggle/<%= profile_user._id%>">
+            <a id="profile-toggle-friendship" href="/friendship/toggle/<%= profile_user._id%>">
                 <button id="add-friend" class="friendship-toggle-button">
                     Add
                 </button>
             </a>
         <% } %>
         
-        <script src="/js/toggle_friendship.js"></script>
+        <script src="<%= assertPath('js/toggle_friendship.js') %>"></script>
 </main>
 
 

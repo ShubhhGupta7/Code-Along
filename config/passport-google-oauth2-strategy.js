@@ -5,11 +5,13 @@ const crypto = require('crypto');
 
 const User = require('../models/user');
 
+const env = require('../config/enviroment');
+
 // tell passport to use new strategy for google login
 passport.use(new googleStrategy({
-    clientID: '754866611754-hergoq3humbnuu9avdoqf0icqqssn30k.apps.googleusercontent.com',
-    clientSecret: 'W3C5i2pmXqowPpg2JGwUvQ4P',
-    callbackURL: 'http://localhost:8000/users/auth/google/callback'
+    clientID: env.google_client_id,
+    clientSecret: env.google_client_secret,
+    callbackURL: env.google_call_back_url
 },
 // accessToken is like in jwt, jwt was out access Token same way google gives us access token.
 // refreshToken if we have signed out as session expires the refresh token is used to signin user without telling the user

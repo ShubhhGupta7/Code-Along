@@ -1,0 +1,62 @@
+.add-padding {
+  padding: 2rem;
+}
+
+header {
+  font-family: Quicksand;
+  height: 50px;
+  background-color: white;
+  border-bottom: 1px solid lightgrey;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+header .application-heading-container h2 {
+  font-family: Quicksand;
+  color: grey;
+  margin-left: 5vw;
+  font-size: 1.5rem;
+  font-weight: bolder;
+}
+
+header .horizontal-list {
+  display: inline-block;
+  padding: 0;
+}
+
+header .horizontal-list ul {
+  list-style: none;
+  margin-right: 7rem;
+}
+
+header .horizontal-list ul li {
+  display: inline-block;
+  margin-left: 1rem;
+}
+
+header .horizontal-list ul li a {
+  text-decoration: none;
+  color: grey;
+  font-size: 1.2rem;
+}
+
+header .horizontal-list ul li a img {
+  box-sizing: border-box;
+  height: 25px;
+  width: 25px;
+  border-radius: 50%;
+  border: none;
+  vertical-align: top;
+}
+
+header .horizontal-list ul li a img:hover {
+  transition: border 0.5s;
+  border: .5px solid black;
+}
+
+header .horizontal-list ul li a:hover {
+  transition: all .5s;
+  color: black;
+  font-size: 1.22rem;
+}

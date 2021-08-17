@@ -1,0 +1,79 @@
+footer {
+  box-sizing: border-box;
+  width: 100vw;
+  border-top: 1px solid lightgrey;
+  background-color: white;
+}
+
+footer .footer-main-container {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+
+footer .footer-main-container #logo-container {
+  font-family: fangsong;
+  font-weight: lighter;
+  font-size: 4rem;
+}
+
+footer .footer-main-container #logo-container span {
+  color: black;
+}
+
+footer .footer-main-container .footer-heading-container {
+  height: 200px;
+  width: 500px;
+  margin: 2rem;
+  text-align: center;
+}
+
+footer .footer-main-container .footer-heading-container .author-container a {
+  text-decoration: none;
+}
+
+footer .footer-main-container .footer-heading-container .author-container a h3 {
+  color: grey;
+}
+
+footer .footer-main-container .footer-heading-container .author-container a h3:hover {
+  transition: all 1s;
+  color: black;
+}
+
+footer .footer-main-container div {
+  margin-left: 2vw;
+}
+
+footer .footer-main-container div h3 {
+  font-size: 1.1rem;
+  font-weight: bolder;
+}
+
+footer .footer-main-container ul {
+  list-style: none;
+}
+
+footer .footer-main-container ul li {
+  height: 2.5rem;
+}
+
+footer .footer-main-container ul li a {
+  font-size: 1rem;
+  text-decoration: none;
+  letter-spacing: .2px;
+  color: #615858;
+  font-weight: none;
+}
+
+footer .footer-main-container ul li a:hover {
+  transition: all 0.5s;
+  color: black;
+  font-weight: bolder;
+}
+
+footer .footer-main-container .footer-links-container {
+  height: 300px;
+  width: 150px;
+}
