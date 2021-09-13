@@ -6,7 +6,7 @@ const logger = require('morgan');
 const app = express();
 require('./config/view-helper')(app);
 const cookieParser = require('cookie-parser');
-const port = 8000;
+const port = 9000;
 const expressLayouts = require('express-ejs-layouts');
 const db = require('./config/mongoose');
 const { urlencoded } = require('express');
