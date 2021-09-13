@@ -45,7 +45,7 @@ const development = {
     },
     google_client_id: '754866611754-hergoq3humbnuu9avdoqf0icqqssn30k.apps.googleusercontent.com',
     google_client_secret: 'W3C5i2pmXqowPpg2JGwUvQ4P',
-    google_call_back_url: 'http://localhost:8000/users/auth/google/callback',
+    google_call_back_url: 'http://ec2-3-82-201-131.compute-1.amazonaws.com:10000/users/auth/google/callback',
     // key 2
     jwt_secret: 'codeial',
     // morgan: {
