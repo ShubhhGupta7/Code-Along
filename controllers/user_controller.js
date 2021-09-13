@@ -56,6 +56,7 @@ module.exports.update = async function(req, res) {
                 user.college = req.body.college;
                 user.codechef = req.body.codechef;
                 user.codeforces = req.body.codeforces;
+                user.about = req.body.about;
                 
                 if(req.file) {
                     // this is saving the path of the uploaded file into the avatar field in the user.
