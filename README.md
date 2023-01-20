@@ -1,5 +1,5 @@
 # Code-Along
-A web application that promotes the Developers community. 
+A web application that promotes the Developers community. It supports developers to formulate their teams and permits them to interact and showcase with-in community. 
 ![Screenshot (101)](https://user-images.githubusercontent.com/86280855/192744056-6cbf82b0-6a28-460c-8b01-e851897988d8.png)
 ![Screenshot (100)](https://user-images.githubusercontent.com/86280855/192744065-87013f5c-c13d-4d4b-bedc-380d02c87741.png)
 ![Screenshot (110)](https://user-images.githubusercontent.com/86280855/192744075-d0806de4-93ca-432b-bfeb-30532da17dd9.png)
